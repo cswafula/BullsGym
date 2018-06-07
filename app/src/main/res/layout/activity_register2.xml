@@ -23,13 +23,14 @@
 
             <RadioButton
                 android:layout_width="148sp"
-                android:layout_height="129sp"
-                android:background="@drawable/female"/>
+                android:layout_height="127sp"
+                android:background="@drawable/female2" />
             <RadioButton
+                android:background="@drawable/male2"
                 android:layout_width="148sp"
                 android:layout_height="127sp"
-                android:background="@drawable/male"
-                android:layout_marginLeft="30dp"/>
+                android:layout_marginLeft="30sp"
+                android:layout_marginStart="30sp" />
         </RadioGroup>
 
     <EditText
