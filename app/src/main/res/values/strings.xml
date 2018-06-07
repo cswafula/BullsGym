@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Bull\'s Gym</string>
+    <string name="let_s_bull_this_up">Let\'s Bull This Up</string>
+    <string name="enter_username">Enter Username</string>
+    <string name="enter_email_address">Enter Email Address</string>
+    <string name="enter_password">Enter Password</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="continue_butoon">Continue</string>
+    <string name="or">Or</string>
+    <string name="signup_with_facebook">SignUp with Facebook</string>
 </resources>

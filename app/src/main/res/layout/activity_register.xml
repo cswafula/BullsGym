@@ -11,79 +11,65 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/logo"
-        android:text="Let's Bull This Up"
+        android:text="@string/let_s_bull_this_up"
         android:textColor="@color/green"
         android:layout_marginTop="20dp"
-        android:textSize="30dp"
+        android:textSize="30sp"
         app:fontFamily="@font/nunito_extralight"
-        android:layout_alignParentLeft="true"
         android:gravity="center_horizontal"/>
     <EditText
         android:id="@+id/RegisterUsername"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
         android:layout_marginTop="15dp"
         android:background="@android:drawable/dialog_holo_light_frame"
         android:gravity="center"
-        android:hint="Enter Username"
+        android:hint="@string/enter_username"
         android:inputType="text"
         android:padding="20dp"
-        app:fontFamily="@font/nunito_extralight"
-        android:layout_alignParentLeft="true" />
+        app:fontFamily="@font/nunito_extralight"/>
     <EditText
         android:id="@+id/RegisterEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
         android:layout_marginTop="15dp"
         android:background="@android:drawable/dialog_holo_light_frame"
         android:gravity="center"
-        android:hint="Enter Email Adrress"
+        android:hint="@string/enter_email_address"
         android:inputType="text"
         android:padding="20dp"
         app:fontFamily="@font/nunito_extralight"
-        android:layout_alignParentLeft="true" />
+        tools:ignore="TextFields" />
     <EditText
         android:id="@+id/RegisterPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
         android:layout_marginTop="15dp"
         android:background="@android:drawable/dialog_holo_light_frame"
         android:gravity="center"
-        android:hint="Enter Password"
+        android:hint="@string/enter_password"
         android:inputType="text"
         android:padding="20dp"
         app:fontFamily="@font/nunito_extralight"
-        android:layout_alignParentLeft="true" />
+        tools:ignore="TextFields" />
 
     <EditText
         android:id="@+id/RegisterConfirmPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
         android:layout_marginTop="15dp"
         android:background="@android:drawable/dialog_holo_light_frame"
         android:gravity="center"
-        android:hint="Confirm Password"
+        android:hint="@string/confirm_password"
         android:inputType="text"
         android:padding="20dp"
         app:fontFamily="@font/nunito_extralight"
-        android:layout_alignParentLeft="true" />
+        tools:ignore="TextFields" />
 
     <Button
         android:id="@+id/Continue_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
         android:layout_marginTop="20dp"
         android:background="@color/green"
         android:gravity="center"
@@ -91,17 +77,17 @@
         android:layout_marginLeft="10dp"
         android:textColor="@android:color/black"
         android:padding="10dp"
-        android:text="Continue"
+        android:text="@string/continue_butoon"
         app:fontFamily="@font/nunito_extralight"
         android:textStyle="bold"
-        android:textSize="20dp"
+        android:textSize="20sp"
         android:textAllCaps="false" />
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Or"
+        android:text="@string/or"
         android:textColor="@color/green"
-        android:textSize="30dp"
+        android:textSize="30sp"
         app:fontFamily="@font/nunito_extralight"
         android:gravity="center_horizontal"/>
 
@@ -109,18 +95,16 @@
         android:id="@+id/Register_facebook"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
         android:background="@color/facebook"
         android:gravity="center"
         android:layout_marginRight="10dp"
         android:layout_marginLeft="10dp"
         android:textColor="@android:color/white"
         android:padding="10dp"
-        android:text="SignUp with Facebook"
+        android:text="@string/signup_with_facebook"
         app:fontFamily="@font/nunito_extralight"
         android:textStyle="bold"
-        android:textSize="20dp"
+        android:textSize="20sp"
         android:textAllCaps="false" />
 
 </LinearLayout>
