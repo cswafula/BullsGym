@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Register"
+    android:background="@drawable/registerbackground"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/logo"
+        android:text="Let's Bull This Up"
+        android:textColor="@color/green"
+        android:layout_marginTop="20dp"
+        android:textSize="30dp"
+        app:fontFamily="@font/nunito_extralight"
+        android:layout_alignParentLeft="true"
+        android:gravity="center_horizontal"/>
+    <EditText
+        android:id="@+id/RegisterUsername"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="15dp"
+        android:background="@android:drawable/dialog_holo_light_frame"
+        android:gravity="center"
+        android:hint="Enter Username"
+        android:inputType="text"
+        android:padding="20dp"
+        app:fontFamily="@font/nunito_extralight"
+        android:layout_alignParentLeft="true" />
+    <EditText
+        android:id="@+id/RegisterEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="15dp"
+        android:background="@android:drawable/dialog_holo_light_frame"
+        android:gravity="center"
+        android:hint="Enter Email Adrress"
+        android:inputType="text"
+        android:padding="20dp"
+        app:fontFamily="@font/nunito_extralight"
+        android:layout_alignParentLeft="true" />
+    <EditText
+        android:id="@+id/RegisterPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="15dp"
+        android:background="@android:drawable/dialog_holo_light_frame"
+        android:gravity="center"
+        android:hint="Enter Password"
+        android:inputType="text"
+        android:padding="20dp"
+        app:fontFamily="@font/nunito_extralight"
+        android:layout_alignParentLeft="true" />
+
+    <EditText
+        android:id="@+id/RegisterConfirmPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="15dp"
+        android:background="@android:drawable/dialog_holo_light_frame"
+        android:gravity="center"
+        android:hint="Confirm Password"
+        android:inputType="text"
+        android:padding="20dp"
+        app:fontFamily="@font/nunito_extralight"
+        android:layout_alignParentLeft="true" />
+
+    <Button
+        android:id="@+id/Continue_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="20dp"
+        android:background="@color/green"
+        android:gravity="center"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:textColor="@android:color/black"
+        android:padding="10dp"
+        android:text="Continue"
+        app:fontFamily="@font/nunito_extralight"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:textAllCaps="false" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Or"
+        android:textColor="@color/green"
+        android:textSize="30dp"
+        app:fontFamily="@font/nunito_extralight"
+        android:gravity="center_horizontal"/>
+
+    <Button
+        android:id="@+id/Register_facebook"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:background="@color/facebook"
+        android:gravity="center"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:textColor="@android:color/white"
+        android:padding="10dp"
+        android:text="SignUp with Facebook"
+        app:fontFamily="@font/nunito_extralight"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:textAllCaps="false" />
+
+</LinearLayout>
