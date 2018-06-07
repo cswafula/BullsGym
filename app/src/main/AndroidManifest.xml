@@ -21,7 +21,10 @@
         <activity
             android:name=".Loginpage"
             android:theme="@style/AppTheme2" />
-        <activity android:name=".Register"
+        <activity
+            android:name=".Register"
+            android:theme="@style/AppTheme2" />
+        <activity android:name=".Register2"
             android:theme="@style/AppTheme2"></activity>
     </application>
 
