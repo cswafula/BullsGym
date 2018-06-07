@@ -15,29 +15,50 @@
         android:layout_marginTop="10dp"
         android:src="@drawable/logo"/>
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/unleash_the_bull"
+        android:textColor="@color/green"
+        android:layout_marginBottom="10sp"
+        android:textSize="30sp"
+        app:fontFamily="@font/nunito_extralight"
+        android:gravity="center_horizontal"/>
         <RadioGroup
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_gravity="center_horizontal">
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="102dp"
+                android:layout_height="50dp"
+                android:src="@drawable/gender"/>
 
             <RadioButton
-                android:layout_width="148sp"
-                android:layout_height="127sp"
-                android:background="@drawable/female2" />
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/female"
+                app:fontFamily="@font/nunito_extralight"
+                android:textStyle="bold"
+                android:textColor="@color/green"
+                android:textSize="25sp"/>
             <RadioButton
-                android:background="@drawable/male2"
-                android:layout_width="148sp"
-                android:layout_height="127sp"
-                android:layout_marginLeft="30sp"
-                android:layout_marginStart="30sp" />
+                app:fontFamily="@font/nunito_extralight"
+                android:text="@string/male"
+                android:textColor="@color/green"
+                android:textSize="25sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20sp"
+                android:layout_marginStart="20sp"
+                android:textStyle="bold"/>
         </RadioGroup>
 
     <EditText
         android:id="@+id/RegisterWeight"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="10dp"
         android:background="@android:drawable/dialog_holo_light_frame"
         android:gravity="center"
         android:hint="@string/enter_weight"
@@ -49,7 +70,7 @@
         android:id="@+id/RegisterHeight"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="10dp"
         android:background="@android:drawable/dialog_holo_light_frame"
         android:gravity="center"
         android:hint="@string/enter_height"
@@ -58,11 +79,23 @@
         app:fontFamily="@font/nunito_extralight"
         tools:ignore="TextFields" />
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="10sp"
+        android:layout_marginRight="10sp"
+        android:text="This will help us calculate your BMI to track your progress"
+        android:textColor="@color/green"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:fontFamily="@font/nunito_extralight"
+        android:gravity="center_horizontal"/>
+
     <EditText
         android:id="@+id/RegisterAge"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
         android:background="@android:drawable/dialog_holo_light_frame"
         android:gravity="center"
         android:hint="@string/enter_age"

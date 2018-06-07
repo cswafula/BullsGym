@@ -12,4 +12,7 @@
     <string name="enter_height">Enter Height(cm)</string>
     <string name="enter_age">Enter Age</string>
     <string name="create_account_done">Create Account</string>
+    <string name="female">Female</string>
+    <string name="male">Male</string>
+    <string name="unleash_the_bull">Unleash The Bull</string>
 </resources>
