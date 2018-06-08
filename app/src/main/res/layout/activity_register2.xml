@@ -8,14 +8,8 @@
     android:orientation="vertical"
     android:background="@drawable/register2">
 
-    <ImageView
-        android:id="@+id/logo"
-        android:layout_width="match_parent"
-        android:layout_height="87dp"
-        android:layout_marginTop="10dp"
-        android:src="@drawable/logo"/>
-
     <TextView
+        android:layout_marginTop="20sp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/unleash_the_bull"
@@ -103,6 +97,23 @@
         android:padding="20dp"
         app:fontFamily="@font/nunito_extralight"
         tools:ignore="TextFields" />
+
+    <Button
+        android:id="@+id/Select_Gym"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@color/green"
+        android:gravity="center"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:textColor="@android:color/black"
+        android:padding="10dp"
+        android:text="Select Gym"
+        app:fontFamily="@font/nunito_extralight"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:textAllCaps="false" />
 
     <Button
         android:id="@+id/CreateAccount"
