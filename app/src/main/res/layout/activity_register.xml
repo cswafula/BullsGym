@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:text="@string/let_s_bull_this_up"
         android:textColor="@color/green"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10sp"
         android:textSize="30sp"
         app:fontFamily="@font/nunito_extralight"
         android:gravity="center_horizontal"/>
@@ -36,7 +36,7 @@
         android:background="@android:drawable/dialog_holo_light_frame"
         android:gravity="center"
         android:hint="@string/enter_email_address"
-        android:inputType="text"
+        android:inputType="textEmailAddress"
         android:padding="20dp"
         app:fontFamily="@font/nunito_extralight"
         tools:ignore="TextFields" />
@@ -48,7 +48,7 @@
         android:background="@android:drawable/dialog_holo_light_frame"
         android:gravity="center"
         android:hint="@string/enter_password"
-        android:inputType="text"
+        android:inputType="textPassword"
         android:padding="20dp"
         app:fontFamily="@font/nunito_extralight"
         tools:ignore="TextFields" />
@@ -61,7 +61,7 @@
         android:background="@android:drawable/dialog_holo_light_frame"
         android:gravity="center"
         android:hint="@string/confirm_password"
-        android:inputType="text"
+        android:inputType="textPassword"
         android:padding="20dp"
         app:fontFamily="@font/nunito_extralight"
         tools:ignore="TextFields" />
@@ -87,7 +87,7 @@
         android:layout_height="wrap_content"
         android:text="@string/or"
         android:textColor="@color/green"
-        android:textSize="30sp"
+        android:textSize="22sp"
         app:fontFamily="@font/nunito_extralight"
         android:gravity="center_horizontal"/>
 

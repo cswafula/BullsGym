@@ -32,6 +32,7 @@ public class Register2 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 notification();
+                startActivity(new Intent(Register2.this,HomepageNavigation.class));
             }
         });
 

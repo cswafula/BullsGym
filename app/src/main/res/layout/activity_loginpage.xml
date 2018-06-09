@@ -11,59 +11,46 @@
     <ImageView
         android:id="@+id/logo"
         android:layout_width="match_parent"
-        android:layout_height="87dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
+        android:layout_height="80sp"
         android:layout_marginTop="20dp"
         android:src="@drawable/logo" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/logo"
         android:text="Let's Get Started"
         android:textColor="@color/green"
-        android:textSize="30dp"
+        android:textSize="30sp"
         app:fontFamily="@font/nunito_extralight"
-        android:layout_alignParentLeft="true"
         android:gravity="center_horizontal"/>
 
     <EditText
         android:id="@+id/LoginUsername"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
         android:layout_marginTop="20dp"
         android:background="@android:drawable/dialog_holo_light_frame"
         android:gravity="center"
         android:hint="Enter Username"
         android:inputType="text"
         android:padding="20dp"
-        app:fontFamily="@font/nunito_extralight"
-        android:layout_alignParentLeft="true" />
+        app:fontFamily="@font/nunito_extralight" />
     <EditText
         android:id="@+id/LoginPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
         android:layout_marginTop="20dp"
         android:background="@android:drawable/dialog_holo_light_frame"
         android:gravity="center"
         android:hint="Enter Password"
-        android:inputType="text"
+        android:inputType="textPassword"
         android:padding="20dp"
-        app:fontFamily="@font/nunito_extralight"
-        android:layout_alignParentLeft="true" />
+        app:fontFamily="@font/nunito_extralight" />
 
     <Button
         android:id="@+id/login_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
         android:layout_marginTop="20dp"
         android:background="@color/green"
         android:gravity="center"
@@ -81,7 +68,7 @@
         android:layout_height="wrap_content"
         android:text="Or"
         android:textColor="@color/green"
-        android:textSize="30dp"
+        android:textSize="30sp"
         app:fontFamily="@font/nunito_extralight"
         android:gravity="center_horizontal"/>
 
@@ -89,8 +76,6 @@
         android:id="@+id/login_facebook"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
         android:background="@color/facebook"
         android:gravity="center"
         android:layout_marginRight="10dp"
@@ -100,7 +85,7 @@
         android:text="Login with Facebook"
         app:fontFamily="@font/nunito_extralight"
         android:textStyle="bold"
-        android:textSize="20dp"
+        android:textSize="20sp"
         android:textAllCaps="false" />
     <TextView
         android:layout_width="match_parent"
@@ -109,7 +94,7 @@
         android:onClick="CreateAccount"
         android:layout_marginTop="20dp"
         android:textColor="@color/green"
-        android:textSize="20dp"
+        android:textSize="20sp"
         app:fontFamily="@font/nunito_extralight"
         android:gravity="center_horizontal"/>
 
