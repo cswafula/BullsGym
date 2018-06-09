@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
         android:id="@+id/action_settings"
-        android:orderInCategory="100"
-        android:title="@string/action_settings"
-        app:showAsAction="never" />
+        android:icon="@drawable/ic_music_two"
+        android:title="Workout Music"
+        android:iconTint="@color/green"
+        app:showAsAction="always" />
 </menu>

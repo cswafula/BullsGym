@@ -33,7 +33,9 @@
                                   </option>
                                   <option name="values">
                                     <map>
-                                      <entry key="outputName" value="ic_music" />
+                                      <entry key="outputName" value="ic_music_two" />
+                                      <entry key="theme" value="CUSTOM" />
+                                      <entry key="themeColor" value="08ff00" />
                                     </map>
                                   </option>
                                 </PersistentState>
