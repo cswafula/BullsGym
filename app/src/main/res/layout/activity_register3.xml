@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Register3"
+    android:orientation="vertical"
+    android:background="@drawable/register2">
+
+    <TextView
+        android:layout_marginTop="10sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/no_pain_no_gain"
+        android:textColor="@color/green"
+        android:layout_marginBottom="10sp"
+        android:textSize="30sp"
+        app:fontFamily="@font/nunito_extralight"
+        android:gravity="center_horizontal"/>
+
+    <Button
+        android:id="@+id/CreateAccount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@color/green"
+        android:gravity="center"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:textColor="@android:color/black"
+        android:padding="10dp"
+        android:text="@string/create_account_done"
+        app:fontFamily="@font/nunito_extralight"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:textAllCaps="false" />
+
+</LinearLayout>

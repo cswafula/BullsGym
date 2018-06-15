@@ -26,19 +26,7 @@ public class Register2 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register2);
-
-        Button CreateAcc= (Button) findViewById(R.id.CreateAccount);
-        CreateAcc.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                notification();
-                startActivity(new Intent(Register2.this,HomepageNavigation.class));
-            }
-        });
-
-        if(versionCheck()){
             init();
-        }
     }
 
     private void notification() {
@@ -58,25 +46,26 @@ public class Register2 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(Register2.this,MapActivity.class));
+                finish();
             }
         });
     }
 
-    public boolean versionCheck(){
-        Log.d(TAG, "versionCheck: checking google services version");
-        int available= GoogleApiAvailability.getInstance().isGooglePlayServicesAvailable(Register2.this);
-        if(available == ConnectionResult.SUCCESS){
-            //everything is okay and the user can make requests
-            Log.d(TAG, "versionCheck: google play services is available");
-            return true;
-        }else if(GoogleApiAvailability.getInstance().isUserResolvableError(available)){
-            //an error occurred but we can resolve it
-            Log.d(TAG, "versionCheck: an error occured but we can fix it");
-            Dialog dialog=GoogleApiAvailability.getInstance().getErrorDialog(Register2.this, available,ERROR_DIALOG_REQUEST);
-            dialog.show();
-        }else{
-            Toast.makeText(getApplicationContext(),"Your Google maps version is incomptible",Toast.LENGTH_LONG).show();
-        }
-        return false;
-    }
+//    public boolean versionCheck(){
+//        Log.d(TAG, "versionCheck: checking google services version");
+//        int available= GoogleApiAvailability.getInstance().isGooglePlayServicesAvailable(Register2.this);
+//        if(available == ConnectionResult.SUCCESS){
+//            //everything is okay and the user can make requests
+//            Log.d(TAG, "versionCheck: google play services is available");
+//            return true;
+//        }else if(GoogleApiAvailability.getInstance().isUserResolvableError(available)){
+//            //an error occurred but we can resolve it
+//            Log.d(TAG, "versionCheck: an error occured but we can fix it");
+//            Dialog dialog=GoogleApiAvailability.getInstance().getErrorDialog(Register2.this, available,ERROR_DIALOG_REQUEST);
+//            dialog.show();
+//        }else{
+//            Toast.makeText(getApplicationContext(),"Your Google maps version is incomptible",Toast.LENGTH_LONG).show();
+//        }
+//        return false;
+//    }
 }

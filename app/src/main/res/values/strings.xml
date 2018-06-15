@@ -24,4 +24,12 @@
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
+    <string name="record_workout">Record Workout</string>
+    <string name="progress_photos">Progress Photos</string>
+    <string name="personal_trainers">Personal Trainers</string>
+    <string name="workout_music">Workout Music</string>
+    <string name="change_language">Change Language</string>
+    <string name="no_pain_no_gain">No Pain, No Gain</string>
+    <string name="your_progress">This will help us calculate your BMI to track your progress</string>
+    <string name="select_gym">Select Gym</string>
 </resources>

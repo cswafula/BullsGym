@@ -1,5 +1,8 @@
 package com.example.charlie.bullsgym;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.FloatingActionButton;
@@ -14,6 +17,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 public class HomepageNavigation extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, BottomNavigationView.OnNavigationItemSelectedListener {
@@ -22,7 +26,7 @@ public class HomepageNavigation extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_homepage_navigation);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
         Fragment fragment2=new HomeFragment();
@@ -31,13 +35,13 @@ public class HomepageNavigation extends AppCompatActivity
         BottomNavigationView navigation = findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(this);
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer =findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
     }
 
@@ -74,13 +78,31 @@ public class HomepageNavigation extends AppCompatActivity
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+        if (id == R.id.action_workout_Music_2) {
+            startActivity(new Intent(HomepageNavigation.this, Music.class));
+        }else if(id == R.id.action_Language){
+            popupdialog();
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    private void popupdialog() {
+
+        final String[] Languages= {"English","Spanish","German","Chinese","French","Japanese"};
+
+        AlertDialog.Builder builder= new AlertDialog.Builder(HomepageNavigation.this);
+        builder.setTitle("Select Language");
+        builder.setItems(Languages, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                Toast.makeText(getApplicationContext(), Languages[which], Toast.LENGTH_LONG).show();
+            }
+        });
+        AlertDialog alertDialog= builder.create();
+        alertDialog.show();
+
     }
 
     @SuppressWarnings("StatementWithEmptyBody")

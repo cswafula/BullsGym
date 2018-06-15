@@ -79,7 +79,7 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginLeft="10sp"
         android:layout_marginRight="10sp"
-        android:text="This will help us calculate your BMI to track your progress"
+        android:text="@string/your_progress"
         android:textColor="@color/green"
         android:textSize="20sp"
         android:textStyle="bold"
@@ -109,27 +109,11 @@
         android:layout_marginLeft="10dp"
         android:textColor="@android:color/black"
         android:padding="10dp"
-        android:text="Select Gym"
+        android:text="@string/select_gym"
         app:fontFamily="@font/nunito_extralight"
         android:textStyle="bold"
         android:textSize="20sp"
         android:textAllCaps="false" />
 
-    <Button
-        android:id="@+id/CreateAccount"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:background="@color/green"
-        android:gravity="center"
-        android:layout_marginRight="10dp"
-        android:layout_marginLeft="10dp"
-        android:textColor="@android:color/black"
-        android:padding="10dp"
-        android:text="@string/create_account_done"
-        app:fontFamily="@font/nunito_extralight"
-        android:textStyle="bold"
-        android:textSize="20sp"
-        android:textAllCaps="false" />
 
     </LinearLayout>

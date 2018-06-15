@@ -2,9 +2,12 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@+id/action_settings"
+        android:id="@+id/action_workout_Music_2"
         android:icon="@drawable/ic_music_two"
-        android:title="Workout Music"
-        android:iconTint="@color/green"
+        android:title="@string/workout_music"
         app:showAsAction="always" />
+    <item
+        android:id="@+id/action_Language"
+        android:title="@string/change_language"
+        app:showAsAction="never" />
 </menu>
