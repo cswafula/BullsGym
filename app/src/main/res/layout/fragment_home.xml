@@ -17,6 +17,7 @@
         android:layout_marginEnd="1dp">
 
         <TextView
+            android:id="@+id/TxtRecordWorkout"
             android:layout_width="180sp"
             android:layout_height="wrap_content"
             android:layout_marginTop="10sp"

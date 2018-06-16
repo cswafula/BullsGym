@@ -23,6 +23,7 @@ public class Loginpage extends AppCompatActivity {
 
     private void login() {
         startActivity(new Intent(Loginpage.this,HomepageNavigation.class));
+        finish();
     }
 
     public void CreateAccount(View view){

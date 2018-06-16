@@ -7,22 +7,22 @@
         <item
             android:id="@+id/nav_Profile"
             android:icon="@drawable/ic_home_icon"
-            android:title="My Profile" />
+            android:title="@string/my_profiles" />
         <item
             android:id="@+id/nav_Music"
             android:icon="@drawable/ic_music"
-            android:title="Workout Music" />
+            android:title="@string/workout_music" />
         <item
             android:id="@+id/nav_progress"
             android:icon="@drawable/ic_menu_gallery"
-            android:title="Progress photos"/>
+            android:title="@string/progress_photos"/>
         <item
             android:id="@+id/nav_settings"
             android:icon="@drawable/ic_menu_manage"
-            android:title="Settings" />
+            android:title="@string/action_settings" />
         <item
             android:id="@+id/nav_logout"
             android:icon="@drawable/ic_logout"
-            android:title="Logout" />
+            android:title="@string/logout" />
     </group>
 </menu>

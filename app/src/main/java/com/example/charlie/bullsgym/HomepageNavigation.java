@@ -1,8 +1,10 @@
 package com.example.charlie.bullsgym;
 
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.FloatingActionButton;
@@ -17,10 +19,18 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.charlie.bullsgym.helper.LocaleHelper;
+
+import io.paperdb.Paper;
 
 public class HomepageNavigation extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, BottomNavigationView.OnNavigationItemSelectedListener {
+
+    public TextView RecordWorkout;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +38,17 @@ public class HomepageNavigation extends AppCompatActivity
         setContentView(R.layout.activity_homepage_navigation);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        RecordWorkout=(TextView) findViewById(R.id.TxtRecordWorkout);
+
+        //initialize paper for the language selection
+        Paper.init(this);
+
+        //set default language to english
+        String language= Paper.book().read("language");
+        if(language == null)
+            Paper.book().write("language","en");
+
+
 
         Fragment fragment2=new HomeFragment();
         loadFragment(fragment2);
@@ -43,6 +64,12 @@ public class HomepageNavigation extends AppCompatActivity
 
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+    }
+    public void updateView(String lang) {
+        Context context = LocaleHelper.setLocale(this,lang);
+        context.getResources();
+        startActivity(new Intent(HomepageNavigation.this, HomepageNavigation.class));
+        finish();
     }
 
     private boolean loadFragment(Fragment fragment){
@@ -90,7 +117,7 @@ public class HomepageNavigation extends AppCompatActivity
 
     private void popupdialog() {
 
-        final String[] Languages= {"English","Spanish","German","Chinese","French","Japanese"};
+        final String[] Languages= {"English","Spanish","Chinese","French"};
 
         AlertDialog.Builder builder= new AlertDialog.Builder(HomepageNavigation.this);
         builder.setTitle("Select Language");
@@ -98,6 +125,19 @@ public class HomepageNavigation extends AppCompatActivity
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 Toast.makeText(getApplicationContext(), Languages[which], Toast.LENGTH_LONG).show();
+                if(Languages[which] == "English"){
+                    Paper.book().write("language","en");
+                    updateView((String) Paper.book().read("language"));
+                }else if(Languages[which] == "Spanish"){
+                    Paper.book().write("language","es");
+                    updateView((String) Paper.book().read("language"));
+                }else if(Languages[which] == "Chinese"){
+                    Paper.book().write("language","zh");
+                    updateView((String) Paper.book().read("language"));
+                }else if(Languages[which] == "French"){
+                    Paper.book().write("language","fr");
+                    updateView((String) Paper.book().read("language"));
+                }
             }
         });
         AlertDialog alertDialog= builder.create();

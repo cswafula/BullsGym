@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Bull\'s Gym</string>
+    <string name="let_s_bull_this_up">Laissez Bull ce jusqu\'à</string>
+    <string name="enter_username">Nom d\'utilisateur</string>
+    <string name="enter_email_address">Adresse e-mail</string>
+    <string name="enter_password">Mot de passe</string>
+    <string name="confirm_password">Confirmez le mot de passe</string>
+    <string name="continue_butoon">Continuer</string>
+    <string name="or">Or</string>
+    <string name="signup_with_facebook">Inscription avec Facebook</string>
+    <string name="enter_weight">Entrer le poids</string>
+    <string name="enter_height">Entrez la hauteur (cm)</string>
+    <string name="enter_age">Entrez l\'âge</string>
+    <string name="create_account_done">Créer un compte</string>
+    <string name="female">Femelle</string>
+    <string name="male">Mâle</string>
+    <string name="unleash_the_bull">Libérez le taureau</string>
+    <string name="title_activity_choose_gym">Map</string>
+    <string name="Maps_Api_key">AIzaSyCHupRCeL9UuYCWMSp3CS6FrJIW3lf3gJU</string>
+    <string name="title_activity_homepage_navigation">Bull\'s Gym</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Paramètres</string>
+    <string name="record_workout">Enregistrer l\'entraînement</string>
+    <string name="progress_photos">Photos de progrès</string>
+    <string name="personal_trainers">Entraîneurs personnels</string>
+    <string name="workout_music">Musique d\'entraînement</string>
+    <string name="change_language">Changer de langue</string>
+    <string name="no_pain_no_gain">On a rien sans rien</string>
+    <string name="your_progress">Cela nous aidera à calculer votre IMC pour suivre vos progrès</string>
+    <string name="select_gym">Sélectionnez Gym</string>
+    <string name="let_s_get_started">Commençons</string>
+    <string name="login">S\'identifier</string>
+    <string name="login_with_facebook">Se connecter avec Facebook</string>
+    <string name="don_t_have_an_account_signup">Vous n\'avez pas de compte? S\'inscrire</string>
+    <string name="my_profiles">Mon profil</string>
+    <string name="logout">Connectez - Out</string>
+</resources>

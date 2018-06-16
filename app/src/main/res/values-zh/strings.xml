@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Bull\'s Gym</string>
+    <string name="let_s_bull_this_up">让我们来看看吧</string>
+    <string name="enter_username">输入用户名</string>
+    <string name="enter_email_address">请输入电邮地址</string>
+    <string name="enter_password">输入密码</string>
+    <string name="confirm_password">确认密码</string>
+    <string name="continue_butoon">继续</string>
+    <string name="or">Or</string>
+    <string name="signup_with_facebook">用Facebook注册</string>
+    <string name="enter_weight">输入重量</string>
+    <string name="enter_height">输入高度（cm）</string>
+    <string name="enter_age">输入年龄</string>
+    <string name="create_account_done">创建帐号</string>
+    <string name="female">女</string>
+    <string name="male">男</string>
+    <string name="unleash_the_bull">释放公牛</string>
+    <string name="title_activity_choose_gym">Map</string>
+    <string name="Maps_Api_key">AIzaSyCHupRCeL9UuYCWMSp3CS6FrJIW3lf3gJU</string>
+    <string name="title_activity_homepage_navigation">Bull\'s Gym</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">设置</string>
+    <string name="record_workout">记录锻炼</string>
+    <string name="progress_photos">进度照片</string>
+    <string name="personal_trainers">私人教练</string>
+    <string name="workout_music">锻炼音乐</string>
+    <string name="change_language">改变语言</string>
+    <string name="no_pain_no_gain">一分耕耘一分收获</string>
+    <string name="your_progress">这将帮助我们计算您的BMI来跟踪您的进度</string>
+    <string name="select_gym">选择健身房</string>
+    <string name="let_s_get_started">让我们开始吧</string>
+    <string name="login">登录</string>
+    <string name="login_with_facebook">用Facebook登录</string>
+    <string name="don_t_have_an_account_signup">没有账户？注册</string>
+    <string name="my_profiles">我的简历</string>
+    <string name="logout">登出</string>
+</resources>

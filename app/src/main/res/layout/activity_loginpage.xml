@@ -18,7 +18,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Let's Get Started"
+        android:text="@string/let_s_get_started"
         android:textColor="@color/green"
         android:textSize="30sp"
         app:fontFamily="@font/nunito_extralight"
@@ -31,7 +31,7 @@
         android:layout_marginTop="20dp"
         android:background="@android:drawable/dialog_holo_light_frame"
         android:gravity="center"
-        android:hint="Enter Username"
+        android:hint="@string/enter_username"
         android:inputType="text"
         android:padding="20dp"
         app:fontFamily="@font/nunito_extralight" />
@@ -42,7 +42,7 @@
         android:layout_marginTop="20dp"
         android:background="@android:drawable/dialog_holo_light_frame"
         android:gravity="center"
-        android:hint="Enter Password"
+        android:hint="@string/enter_password"
         android:inputType="textPassword"
         android:padding="20dp"
         app:fontFamily="@font/nunito_extralight" />
@@ -58,15 +58,15 @@
         android:layout_marginLeft="10dp"
         android:textColor="@android:color/black"
         android:padding="10dp"
-        android:text="Login"
+        android:text="@string/login"
         app:fontFamily="@font/nunito_extralight"
         android:textStyle="bold"
-        android:textSize="20dp"
+        android:textSize="20sp"
         android:textAllCaps="false" />
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Or"
+        android:text="@string/or"
         android:textColor="@color/green"
         android:textSize="30sp"
         app:fontFamily="@font/nunito_extralight"
@@ -82,7 +82,7 @@
         android:layout_marginLeft="10dp"
         android:textColor="@android:color/white"
         android:padding="10dp"
-        android:text="Login with Facebook"
+        android:text="@string/login_with_facebook"
         app:fontFamily="@font/nunito_extralight"
         android:textStyle="bold"
         android:textSize="20sp"
@@ -90,7 +90,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Don't have an Account? SignUp"
+        android:text="@string/don_t_have_an_account_signup"
         android:onClick="CreateAccount"
         android:layout_marginTop="20dp"
         android:textColor="@color/green"
