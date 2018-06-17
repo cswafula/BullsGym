@@ -38,4 +38,13 @@
     <string name="don_t_have_an_account_signup">Don\'t have an Account? SignUp</string>
     <string name="my_profiles">My Profile</string>
     <string name="logout">Logout</string>
+    <string name="home">Home</string>
+    <string name="workouts">Workouts</string>
+    <string name="log">Log</string>
+    <string name="chest">Chest</string>
+    <string name="legs">Legs</string>
+    <string name="arms">Arms</string>
+    <string name="sholders">sholders</string>
+    <string name="abs">Abs</string>
+    <string name="triceps">Triceps</string>
 </resources>

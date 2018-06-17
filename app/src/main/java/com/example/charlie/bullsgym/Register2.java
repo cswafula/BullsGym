@@ -46,7 +46,6 @@ public class Register2 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(Register2.this,MapActivity.class));
-                finish();
             }
         });
     }

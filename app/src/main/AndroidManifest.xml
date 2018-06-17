@@ -53,9 +53,6 @@
             android:label="@string/title_activity_homepage_navigation"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".Register3"
-            android:theme="@style/AppTheme2" />
-        <activity
             android:name=".Music"
             android:theme="@style/AppTheme2" />
     </application>

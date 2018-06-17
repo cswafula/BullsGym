@@ -44,7 +44,6 @@ public class LocaleHelper {
         return context.createConfigurationContext(config);
     }
 
-    @SuppressWarnings("deprecation")
     private static Context updateResourcesLegacy(Context context, String lang) {
         Locale  locale= new Locale(lang);
         Locale.setDefault(locale);

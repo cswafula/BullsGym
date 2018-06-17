@@ -83,7 +83,6 @@ public class MapActivity extends AppCompatActivity implements GoogleApiClient.On
 
                 String toastMsg = String.format("Place: %s", place.getName());
                 Toast.makeText(this, toastMsg, Toast.LENGTH_LONG).show();
-                startActivity(new Intent(MapActivity.this,Register3.class));
                 finish();
             }
         }

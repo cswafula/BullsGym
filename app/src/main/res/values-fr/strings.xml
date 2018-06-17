@@ -39,4 +39,13 @@
     <string name="don_t_have_an_account_signup">Vous n\'avez pas de compte? S\'inscrire</string>
     <string name="my_profiles">Mon profil</string>
     <string name="logout">Connectez - Out</string>
+    <string name="home">Accueil</string>
+    <string name="workouts">Entraînements</string>
+    <string name="log">Bûche</string>
+    <string name="chest">Poitrine</string>
+    <string name="legs">Jambes</string>
+    <string name="arms">Bras</string>
+    <string name="sholders">Épaules</string>
+    <string name="abs">Abdos</string>
+    <string name="triceps">Triceps</string>
 </resources>
