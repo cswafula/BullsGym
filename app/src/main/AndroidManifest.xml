@@ -55,6 +55,10 @@
         <activity
             android:name=".Music"
             android:theme="@style/AppTheme2" />
+        <activity
+            android:theme="@style/AppTheme2"
+            android:name=".SecondMapsActivity"
+            android:label="@string/title_activity_second_maps"></activity>
     </application>
 
 </manifest>

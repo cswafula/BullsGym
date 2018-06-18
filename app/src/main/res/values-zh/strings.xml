@@ -48,4 +48,5 @@
     <string name="sholders">肩膀</string>
     <string name="abs">阿布斯</string>
     <string name="triceps">肱三头肌</string>
+    <string name="select_date_to_view_day_s_workouts">选择日期查看当天的锻炼</string>
 </resources>

@@ -36,6 +36,8 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
+import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 
@@ -60,12 +62,23 @@ public class MapActivity extends AppCompatActivity implements GoogleApiClient.On
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_map);
 
+//        getLocationPermission();
+
         initplaces();
 
 
     }
 
+    private void addMarkers() {
+        Marker marker=mMap.addMarker(new MarkerOptions().position(new LatLng(51.5072, -0.1275)));
+        marker.setVisible(true);
+        marker.setTitle("Bulls Gym");
+        marker.setSnippet("This is just the first snippet");
+
+    }
+
     private void initplaces() {
+
         PlacePicker.IntentBuilder builder = new PlacePicker.IntentBuilder();
 
         try {

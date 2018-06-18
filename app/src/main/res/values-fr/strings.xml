@@ -48,4 +48,5 @@
     <string name="sholders">Épaules</string>
     <string name="abs">Abdos</string>
     <string name="triceps">Triceps</string>
+    <string name="select_date_to_view_day_s_workouts">Sélectionnez Date pour afficher les séances d\'entraînement de la journée</string>
 </resources>

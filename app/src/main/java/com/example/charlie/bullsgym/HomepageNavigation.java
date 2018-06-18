@@ -10,6 +10,7 @@ import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.ActionBar;
 import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
@@ -24,6 +25,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.charlie.bullsgym.helper.LocaleHelper;
+import com.github.sundeepk.compactcalendarview.CompactCalendarView;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
 
 import io.paperdb.Paper;
 
@@ -32,14 +38,14 @@ public class HomepageNavigation extends AppCompatActivity
 
     public TextView RecordWorkout;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_homepage_navigation);
-        Toolbar toolbar = findViewById(R.id.toolbar);
+        final Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         RecordWorkout=(TextView) findViewById(R.id.TxtRecordWorkout);
+
 
         //initialize paper for the language selection
         Paper.init(this);
@@ -66,6 +72,8 @@ public class HomepageNavigation extends AppCompatActivity
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
     }
+
+    //update view for the translation of language clicked
     public void updateView(String lang) {
         Context context = LocaleHelper.setLocale(this,lang);
         context.getResources();

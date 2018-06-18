@@ -45,7 +45,7 @@ public class Register2 extends AppCompatActivity {
         SelectGym.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Register2.this,MapActivity.class));
+                startActivity(new Intent(Register2.this,SecondMapsActivity.class));
             }
         });
     }
