@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".Register2"
     android:orientation="vertical"
-    android:background="@drawable/register2">
+    android:background="@drawable/newloginbackground">
 
     <TextView
         android:layout_marginTop="10sp"
@@ -21,22 +21,28 @@
         <RadioGroup
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:id="@+id/Radio">
 
             <ImageView
-                android:layout_width="90dp"
+                android:layout_width="43dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
                 android:layout_height="50dp"
-                android:src="@drawable/gender"/>
+                android:src="@drawable/gender" />
 
             <RadioButton
+                android:id="@+id/Female"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/female"
                 app:fontFamily="@font/nunito_extralight"
                 android:textStyle="bold"
                 android:textColor="@color/green"
-                android:textSize="25sp"/>
+                android:textSize="25sp"
+                />
             <RadioButton
+                android:id="@+id/Male"
                 app:fontFamily="@font/nunito_extralight"
                 android:text="@string/male"
                 android:textColor="@color/green"
@@ -48,30 +54,40 @@
                 android:textStyle="bold"/>
         </RadioGroup>
 
-    <EditText
+    <com.rengwuxian.materialedittext.MaterialEditText
         android:id="@+id/RegisterWeight"
+        app:met_iconLeft="@drawable/ic_weight"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:background="@android:drawable/dialog_holo_light_frame"
-        android:gravity="center"
         android:hint="@string/enter_weight"
-        android:inputType="text"
-        android:padding="20dp"
-        app:fontFamily="@font/nunito_extralight"
-        tools:ignore="TextFields" />
-    <EditText
+        app:met_errorColor="@android:color/holo_red_light"
+        app:met_baseColor="@android:color/white"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        app:met_primaryColor="@color/green"
+        app:met_floatingLabel="highlight"
+        app:met_maxCharacters="3"
+        android:fontFamily="@font/nunito_extralight"
+        android:inputType="number"
+        />
+    <com.rengwuxian.materialedittext.MaterialEditText
         android:id="@+id/RegisterHeight"
+        app:met_iconLeft="@drawable/ic_weight"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:background="@android:drawable/dialog_holo_light_frame"
-        android:gravity="center"
         android:hint="@string/enter_height"
-        android:inputType="text"
-        android:padding="20dp"
-        app:fontFamily="@font/nunito_extralight"
-        tools:ignore="TextFields" />
+        app:met_errorColor="@android:color/holo_red_light"
+        app:met_baseColor="@android:color/white"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        app:met_primaryColor="@color/green"
+        app:met_floatingLabel="highlight"
+        app:met_maxCharacters="3"
+        android:fontFamily="@font/nunito_extralight"
+        android:inputType="number"
+        />
 
     <TextView
         android:layout_width="match_parent"
@@ -85,18 +101,6 @@
         android:textStyle="bold"
         app:fontFamily="@font/nunito_extralight"
         android:gravity="center_horizontal"/>
-
-    <EditText
-        android:id="@+id/RegisterAge"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@android:drawable/dialog_holo_light_frame"
-        android:gravity="center"
-        android:hint="@string/enter_age"
-        android:inputType="text"
-        android:padding="20dp"
-        app:fontFamily="@font/nunito_extralight"
-        tools:ignore="TextFields" />
 
     <Button
         android:id="@+id/Select_Gym"
@@ -132,5 +136,12 @@
         android:textSize="20sp"
         android:textAllCaps="false" />
 
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:visibility="gone"
+        android:id="@+id/Regiates_Progress"/>
 
     </LinearLayout>

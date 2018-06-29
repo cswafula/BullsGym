@@ -49,4 +49,6 @@
     <string name="abs">Abdominales</string>
     <string name="triceps">Tríceps</string>
     <string name="select_date_to_view_day_s_workouts">Seleccione Fecha para ver los entrenamientos del día</string>
+    <string name="facebook_app_id">205203650099511</string>
+    <string name="facebook_login_protocol_scheme">fb205203650099511</string>
 </resources>

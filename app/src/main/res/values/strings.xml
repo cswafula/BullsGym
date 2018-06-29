@@ -9,7 +9,7 @@
     <string name="or">Or</string>
     <string name="signup_with_facebook">SignUp with Facebook</string>
     <string name="enter_weight">Enter Weight</string>
-    <string name="enter_height">Enter Height(cm)</string>
+    <string name="enter_height">Enter Height(m)</string>
     <string name="enter_age">Enter Age</string>
     <string name="create_account_done">Create Account</string>
     <string name="female">Female</string>
@@ -49,4 +49,11 @@
     <string name="triceps">Triceps</string>
     <string name="title_activity_second_maps">Map</string>
     <string name="select_date_to_view_day_s_workouts">Select Date to view day\'s workouts</string>
+    <string name="facebook_app_id">205203650099511</string>
+    <string name="facebook_login_protocol_scheme">fb205203650099511</string>
+    <string name="create_new_workout">Create new Workout</string>
+    <string name="open_gallery">Open Gallery</string>
+    <string name="capture_image">Capture Image</string>
+    <string name="terms_of_service">By continuing, you agree to our terms of service</string>
+    <string name="open_camera">Open Camera</string>
 </resources>

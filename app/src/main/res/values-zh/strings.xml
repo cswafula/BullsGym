@@ -49,4 +49,6 @@
     <string name="abs">阿布斯</string>
     <string name="triceps">肱三头肌</string>
     <string name="select_date_to_view_day_s_workouts">选择日期查看当天的锻炼</string>
+    <string name="facebook_app_id">205203650099511</string>
+    <string name="facebook_login_protocol_scheme">fb205203650099511</string>
 </resources>

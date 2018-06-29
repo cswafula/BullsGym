@@ -49,5 +49,8 @@
     <string name="abs">Abs</string>
     <string name="triceps">Triceps</string>
     <string name="select_date_to_view_day_s_workouts">Select Date to view day\'s workouts</string>
+    <string name="facebook_app_id">205203650099511</string>
+    <string name="facebook_login_protocol_scheme">fb205203650099511</string>
+
 
 </resources>

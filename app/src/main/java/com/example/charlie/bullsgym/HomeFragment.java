@@ -1,5 +1,8 @@
 package com.example.charlie.bullsgym;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -7,12 +10,94 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import com.github.sundeepk.compactcalendarview.CompactCalendarView;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
 
 public class HomeFragment extends Fragment {
+    private SimpleDateFormat dateFormatMonth = new SimpleDateFormat("MMMM-yyyy", Locale.getDefault());
+    TextView RecordWorkout, ProgressPhotos, PersonalTrainers, dateshower;
+    LinearLayout LayoutRecordWorkout, LayoutProgressPhotos,LayoutPersonalTrainers;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_home,null);
+        final View view=inflater.inflate(R.layout.fragment_home,null);
+        RecordWorkout= view.findViewById(R.id.TxtRecordWorkout);
+        ProgressPhotos=view.findViewById(R.id.TxtProgressPhotos);
+        PersonalTrainers=view.findViewById(R.id.TxtPersonalTrainers);
+        LayoutRecordWorkout=view.findViewById(R.id.LayoutRecordWorkout);
+        LayoutProgressPhotos=view.findViewById(R.id.LayoutProgressPhotos);
+        LayoutPersonalTrainers=view.findViewById(R.id.LayoutPersonalTrainers);
+
+        RecordWorkout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                RecordWorkoutDialog();
+            }
+        });
+        LayoutRecordWorkout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                RecordWorkoutDialog();
+            }
+        });
+
+        ProgressPhotos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                OpenGallery();
+            }
+        });
+        LayoutProgressPhotos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                OpenGallery();
+            }
+        });
+
+        return view;
+    }
+
+    private void OpenGallery() {
+        startActivity(new Intent(getContext(),Camera.class));
+    }
+
+    private void RecordWorkoutDialog() {
+        AlertDialog.Builder mBuilder=new AlertDialog.Builder(getContext());
+        View mView = getLayoutInflater().inflate(R.layout.dialog_record_workout,null);
+        Button BtnCreateWorkout= mView.findViewById(R.id.BtnCreateWorkout);
+        EditText TxtCreateWorkout= mView.findViewById(R.id.TxtEnterWorkout);
+        dateshower= mView.findViewById(R.id.createWorkoutMonth);
+        CompactCalendarView compactCalendarView=mView.findViewById(R.id.Workout_compactcalendar_view);
+        mBuilder.setView(mView);
+        AlertDialog dialog= mBuilder.create();
+        dialog.show();
+
+
+
+        compactCalendarView.setListener(new CompactCalendarView.CompactCalendarViewListener() {
+
+            @Override
+            public void onDayClick(Date dateClicked) {
+                String date_Clicked=dateClicked.toString();
+                        Toast.makeText(getContext(), date_Clicked, Toast.LENGTH_LONG).show();
+            }
+
+            @Override
+            public void onMonthScroll(Date firstDayOfNewMonth) {
+                dateshower.setVisibility(View.VISIBLE);
+                dateshower.setText(dateFormatMonth.format(firstDayOfNewMonth));
+            }
+        });
+
     }
 
 }

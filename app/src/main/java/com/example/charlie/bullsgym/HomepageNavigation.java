@@ -1,5 +1,6 @@
 package com.example.charlie.bullsgym;
 
+import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -36,8 +37,10 @@ import io.paperdb.Paper;
 public class HomepageNavigation extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, BottomNavigationView.OnNavigationItemSelectedListener {
 
-    public TextView RecordWorkout;
+    public TextView RecordWorkout,nav_email,nav_bmi,nav_gym;
+    String Email,Password,Gender,Weight,BMI,GymName,Latitude,Longitude,ImageURL;
 
+    @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,8 +50,21 @@ public class HomepageNavigation extends AppCompatActivity
         RecordWorkout=(TextView) findViewById(R.id.TxtRecordWorkout);
 
 
+
         //initialize paper for the language selection
         Paper.init(this);
+        Email=Paper.book().read("UserEmail").toString();
+        Password=Paper.book().read("UserPassword").toString();
+        Gender=Paper.book().read("UserGender").toString();
+        Weight=Paper.book().read("UserWeight").toString();
+        BMI=Paper.book().read("UserBMI").toString();
+        GymName=Paper.book().read("UserGymName").toString();
+        Latitude=Paper.book().read("UserLatitude").toString();
+        Longitude=Paper.book().read("Userlongitude").toString();
+        ImageURL=Paper.book().read("UserImageUrl").toString();
+
+
+
 
         //set default language to english
         String language= Paper.book().read("language");
@@ -71,6 +87,16 @@ public class HomepageNavigation extends AppCompatActivity
 
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        View headerView= navigationView.getHeaderView(0);
+        nav_email=headerView.findViewById(R.id.nav_header_email);
+        nav_bmi=headerView.findViewById(R.id.nav_header_BMI);
+        nav_gym=headerView.findViewById(R.id.nav_header_currentGym);
+
+        nav_email.setText("Email: "+Email);
+        nav_gym.setText("Current Gym: "+GymName);
+        nav_bmi.setText("Current BMI: "+BMI);
+
     }
 
     //update view for the translation of language clicked
@@ -126,7 +152,7 @@ public class HomepageNavigation extends AppCompatActivity
 
     private void popupdialog() {
 
-        final String[] Languages= {"English","Spanish","Chinese","French"};
+        final String[] Languages= {"English","Swahili","Spanish","Chinese","French"};
 
         AlertDialog.Builder builder= new AlertDialog.Builder(HomepageNavigation.this);
         builder.setTitle("Select Language");
@@ -146,6 +172,9 @@ public class HomepageNavigation extends AppCompatActivity
                 }else if(Languages[which] == "French"){
                     Paper.book().write("language","fr");
                     updateView((String) Paper.book().read("language"));
+                }else if(Languages[which] == "Swahili"){
+                    Paper.book().write("language","sw");
+                    updateView((String) Paper.book().read("language"));
                 }
             }
         });
@@ -157,19 +186,6 @@ public class HomepageNavigation extends AppCompatActivity
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
-        // Handle navigation view item clicks here.
-//        int id = item.getItemId();
-
-//        if (id == R.id.nav_camera) {
-            // Handle the camera action
-//        } else if (id == R.id.nav_gallery) {
-//
-//        } else if (id == R.id.nav_slideshow) {
-//
-//        } else if (id == R.id.nav_manage) {
-//
-//        }
-
         Fragment fragment=null;
         switch (item.getItemId()){
             case R.id.nav_home:
@@ -181,7 +197,42 @@ public class HomepageNavigation extends AppCompatActivity
             case R.id.nav_logs:
                 fragment = new LogFragment();
                 break;
+            case R.id.nav_logout:
+                logout();
+                break;
         }
         return loadFragment(fragment);
+    }
+
+    private void logout() {
+
+        final android.support.v7.app.AlertDialog.Builder builder= new android.support.v7.app.AlertDialog.Builder(HomepageNavigation.this);
+        builder.setMessage("Are you sure you want to Logout?");
+        builder.setCancelable(true);
+        builder.setNegativeButton("No, Stay!", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.cancel();
+            }
+        });
+        builder.setPositiveButton("Yes, Logout!", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                String empty="";
+                Paper.book().write("UserEmail",empty);
+                Paper.book().write("UserPassword",empty);
+                Paper.book().write("UserGender",empty);
+                Paper.book().write("UserWeight",empty);
+                Paper.book().write("UserBMI",empty);
+                Paper.book().write("UserGymName",empty);
+                Paper.book().write("UserLatitude",empty);
+                Paper.book().write("Userlongitude",empty);
+                Paper.book().write("UserImageUrl",empty);
+                startActivity(new Intent(HomepageNavigation.this, Loginpage.class));
+                finish();
+            }
+        });
+        android.support.v7.app.AlertDialog alertDialog= builder.create();
+        alertDialog.show();
     }
 }
