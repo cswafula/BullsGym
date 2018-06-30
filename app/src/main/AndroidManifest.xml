@@ -65,6 +65,12 @@
         <activity
             android:name=".Camera"
             android:theme="@style/AppTheme2" />
+        <activity
+            android:name=".AddWorkout"
+            android:theme="@style/AppTheme2" />
+        <activity
+            android:name=".UserProfile"
+            android:theme="@style/AppTheme2"/>
     </application>
 
 </manifest>

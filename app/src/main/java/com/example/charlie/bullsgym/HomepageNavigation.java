@@ -136,16 +136,14 @@ public class HomepageNavigation extends AppCompatActivity
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_workout_Music_2) {
             startActivity(new Intent(HomepageNavigation.this, Music.class));
-        }else if(id == R.id.action_Language){
-            popupdialog();
         }
+//        else if(id == R.id.action_Language){
+//            popupdialog();
+//        }
 
         return super.onOptionsItemSelected(item);
     }
@@ -199,6 +197,15 @@ public class HomepageNavigation extends AppCompatActivity
                 break;
             case R.id.nav_logout:
                 logout();
+                break;
+            case R.id.nav_Profile:
+                startActivity(new Intent(HomepageNavigation.this, UserProfile.class));
+                break;
+            case R.id.nav_language:
+                popupdialog();
+                break;
+            case R.id.nav_Music:
+                startActivity(new Intent(HomepageNavigation.this, Music.class));
                 break;
         }
         return loadFragment(fragment);

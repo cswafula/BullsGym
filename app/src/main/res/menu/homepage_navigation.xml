@@ -6,8 +6,8 @@
         android:icon="@drawable/ic_music_two"
         android:title="@string/workout_music"
         app:showAsAction="always" />
-    <item
-        android:id="@+id/action_Language"
-        android:title="@string/change_language"
-        app:showAsAction="never" />
+    <!--<item-->
+        <!--android:id="@+id/action_Language"-->
+        <!--android:title="@string/change_language"-->
+        <!--app:showAsAction="never" />-->
 </menu>

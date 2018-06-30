@@ -56,4 +56,8 @@
     <string name="capture_image">Capture Image</string>
     <string name="terms_of_service">By continuing, you agree to our terms of service</string>
     <string name="open_camera">Open Camera</string>
+    <string name="add_workout">Create Workout</string>
+    <string name="reps_completed">Reps Completed</string>
+    <string name="save_profile">Save Profile</string>
+    <string name="change_gym_location">Change Gym Location</string>
 </resources>

@@ -40,13 +40,13 @@ public class HomeFragment extends Fragment {
         RecordWorkout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                RecordWorkoutDialog();
+                startActivity(new Intent(getContext(),AddWorkout.class));
             }
         });
         LayoutRecordWorkout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                RecordWorkoutDialog();
+                startActivity(new Intent(getContext(),AddWorkout.class));
             }
         });
 
@@ -70,34 +70,34 @@ public class HomeFragment extends Fragment {
         startActivity(new Intent(getContext(),Camera.class));
     }
 
-    private void RecordWorkoutDialog() {
-        AlertDialog.Builder mBuilder=new AlertDialog.Builder(getContext());
-        View mView = getLayoutInflater().inflate(R.layout.dialog_record_workout,null);
-        Button BtnCreateWorkout= mView.findViewById(R.id.BtnCreateWorkout);
-        EditText TxtCreateWorkout= mView.findViewById(R.id.TxtEnterWorkout);
-        dateshower= mView.findViewById(R.id.createWorkoutMonth);
-        CompactCalendarView compactCalendarView=mView.findViewById(R.id.Workout_compactcalendar_view);
-        mBuilder.setView(mView);
-        AlertDialog dialog= mBuilder.create();
-        dialog.show();
-
-
-
-        compactCalendarView.setListener(new CompactCalendarView.CompactCalendarViewListener() {
-
-            @Override
-            public void onDayClick(Date dateClicked) {
-                String date_Clicked=dateClicked.toString();
-                        Toast.makeText(getContext(), date_Clicked, Toast.LENGTH_LONG).show();
-            }
-
-            @Override
-            public void onMonthScroll(Date firstDayOfNewMonth) {
-                dateshower.setVisibility(View.VISIBLE);
-                dateshower.setText(dateFormatMonth.format(firstDayOfNewMonth));
-            }
-        });
-
-    }
+//    private void RecordWorkoutDialog() {
+//        AlertDialog.Builder mBuilder=new AlertDialog.Builder(getContext());
+//        View mView = getLayoutInflater().inflate(R.layout.dialog_record_workout,null);
+//        Button BtnCreateWorkout= mView.findViewById(R.id.BtnCreateWorkout);
+//        EditText TxtCreateWorkout= mView.findViewById(R.id.TxtEnterWorkout);
+//        dateshower= mView.findViewById(R.id.createWorkoutMonth);
+//        CompactCalendarView compactCalendarView=mView.findViewById(R.id.Workout_compactcalendar_view);
+//        mBuilder.setView(mView);
+//        AlertDialog dialog= mBuilder.create();
+//        dialog.show();
+//
+//
+//
+//        compactCalendarView.setListener(new CompactCalendarView.CompactCalendarViewListener() {
+//
+//            @Override
+//            public void onDayClick(Date dateClicked) {
+//                String date_Clicked=dateClicked.toString();
+//                        Toast.makeText(getContext(), date_Clicked, Toast.LENGTH_LONG).show();
+//            }
+//
+//            @Override
+//            public void onMonthScroll(Date firstDayOfNewMonth) {
+//                dateshower.setVisibility(View.VISIBLE);
+//                dateshower.setText(dateFormatMonth.format(firstDayOfNewMonth));
+//            }
+//        });
+//
+//    }
 
 }
