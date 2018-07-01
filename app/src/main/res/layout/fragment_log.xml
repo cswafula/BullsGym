@@ -1,49 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:background="@android:color/black">
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
-        android:text="@string/select_date_to_view_day_s_workouts"
-        android:textStyle="bold"
-        android:textColor="@color/green"
-        android:textSize="20sp"
-        android:padding="20sp"
-        app:fontFamily="@font/nunito_extralight"/>
+    android:background="@color/black">
 
-    <TextView
-        android:id="@+id/TxtLog_Date"
-        android:visibility="gone"
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/LogsrecyclerView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
-        android:textStyle="bold"
-        android:textColor="@color/green"
-        android:textSize="20sp"
-        android:padding="10sp"
-        app:fontFamily="@font/nunito_extralight"/>
-
-    <com.github.sundeepk.compactcalendarview.CompactCalendarView
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/compactcalendar_view"
-        android:layout_width="fill_parent"
-        android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp"
-        android:paddingRight="10dp"
-        android:paddingLeft="10dp"
-        android:layout_height="250dp"
-        app:compactCalendarTargetHeight="250dp"
-        app:compactCalendarTextSize="15sp"
-        app:compactCalendarBackgroundColor="@android:color/white"
-        app:compactCalendarTextColor="@android:color/black"
-        app:compactCalendarCurrentSelectedDayBackgroundColor="@color/green"
-        app:compactCalendarCurrentDayBackgroundColor="#B71C1C"
-        app:compactCalendarMultiEventIndicatorColor="#fff"
+        android:layout_height="match_parent"
         />
 
-</LinearLayout>
+
+</RelativeLayout>
