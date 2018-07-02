@@ -47,7 +47,7 @@ public class HomepageNavigation extends AppCompatActivity
         setContentView(R.layout.activity_homepage_navigation);
         final Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        RecordWorkout=(TextView) findViewById(R.id.TxtRecordWorkout);
+//        RecordWorkout=(TextView) findViewById(R.id.TxtRecordWorkout);
 
 
 
@@ -73,7 +73,7 @@ public class HomepageNavigation extends AppCompatActivity
 
 
 
-        Fragment fragment2=new HomeFragment();
+        Fragment fragment2=new WorkoutsFragment();
         loadFragment(fragment2);
 
         BottomNavigationView navigation = findViewById(R.id.navigation);
