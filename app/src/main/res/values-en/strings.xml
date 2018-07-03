@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Bull\'s Gym</string>
+    <string name="app_name">BULL\'S GYM</string>
     <string name="let_s_bull_this_up">Let\'s Bull This Up</string>
     <string name="enter_username">Enter Username</string>
     <string name="enter_email_address">Enter Email Address</string>
@@ -10,7 +10,7 @@
     <string name="or">Or</string>
     <string name="signup_with_facebook">SignUp with Facebook</string>
     <string name="enter_weight">Enter Weight</string>
-    <string name="enter_height">Enter Height(cm)</string>
+    <string name="enter_height">Enter Height(m)</string>
     <string name="enter_age">Enter Age</string>
     <string name="create_account_done">Create Account</string>
     <string name="female">Female</string>
@@ -18,7 +18,7 @@
     <string name="unleash_the_bull">Unleash The Bull</string>
     <string name="title_activity_choose_gym">Map</string>
     <string name="Maps_Api_key">AIzaSyCHupRCeL9UuYCWMSp3CS6FrJIW3lf3gJU</string>
-    <string name="title_activity_homepage_navigation">Bull\'s Gym</string>
+    <string name="title_activity_homepage_navigation">BULL\'S GYM</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_title">Android Studio</string>

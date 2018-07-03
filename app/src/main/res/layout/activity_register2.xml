@@ -84,7 +84,7 @@
         android:layout_marginEnd="15dp"
         app:met_primaryColor="@color/green"
         app:met_floatingLabel="highlight"
-        app:met_maxCharacters="3"
+        app:met_maxCharacters="2"
         android:fontFamily="@font/nunito_extralight"
         android:inputType="number"
         />

@@ -1,6 +1,7 @@
 package com.example.charlie.bullsgym;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.constraint.ConstraintLayout;
 import android.support.v7.widget.RecyclerView;
@@ -41,9 +42,9 @@ public class WorkoutsAdapter extends RecyclerView.Adapter<WorkoutsAdapter.Workou
             @Override
             public void onClick(View v) {
                 if(workouts.getWorkoutname()=="Meals Plan"){
-                    Toast.makeText(mCtx,"You Are a Genius ",Toast.LENGTH_LONG).show();
+                    mCtx.startActivity(new Intent(mCtx,MealsPlan.class));
                 }else if(workouts.getWorkoutname()=="Calories Calculator"){
-                    Toast.makeText(mCtx,"You Are a Genius Again",Toast.LENGTH_LONG).show();
+                    mCtx.startActivity(new Intent(mCtx,CaloriesCalculator.class));
                 }else if(workouts.getWorkoutname()=="BMI Calculator"){
                     Toast.makeText(mCtx,"You Are a Guru",Toast.LENGTH_LONG).show();
                 }

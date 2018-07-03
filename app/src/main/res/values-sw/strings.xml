@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Bull\'s Gym</string>
+    <string name="app_name">BULL\'S GYM</string>
     <string name="let_s_bull_this_up">Hebu Bull Hii Up</string>
     <string name="enter_username">Ingiza jina la mtumiaji</string>
     <string name="enter_email_address">Eka Anwani ya barua pepe</string>
@@ -10,7 +10,7 @@
     <string name="or">Ama</string>
     <string name="signup_with_facebook">Jiandikisha na Facebook</string>
     <string name="enter_weight">Ingiza uzito</string>
-    <string name="enter_height">Ingia Urefu (cm)</string>
+    <string name="enter_height">Ingia Urefu (m)</string>
     <string name="enter_age">Ingiza Umri</string>
     <string name="create_account_done">Tengeneza akaunti</string>
     <string name="female">Kike</string>
@@ -18,7 +18,7 @@
     <string name="unleash_the_bull">Achilia the Bull</string>
     <string name="title_activity_choose_gym">Map</string>
     <string name="Maps_Api_key">AIzaSyCHupRCeL9UuYCWMSp3CS6FrJIW3lf3gJU</string>
-    <string name="title_activity_homepage_navigation">Bull\'s Gym</string>
+    <string name="title_activity_homepage_navigation">BULL\'S GYM</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_title">Android Studio</string>

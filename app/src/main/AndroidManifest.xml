@@ -96,7 +96,12 @@
         <activity
             android:name=".AbsRecycler"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme2"/>
+            android:theme="@style/AppTheme2" />
+        <activity
+            android:name=".MealsPlan"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme2" />
+        <activity android:name=".CaloriesCalculator"></activity>
     </application>
 
 </manifest>

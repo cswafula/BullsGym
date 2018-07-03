@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Bull\'s Gym</string>
+    <string name="app_name">BULL\'S GYM</string>
     <string name="let_s_bull_this_up">让我们来看看吧</string>
     <string name="enter_username">输入用户名</string>
     <string name="enter_email_address">请输入电邮地址</string>
@@ -10,7 +10,7 @@
     <string name="or">Or</string>
     <string name="signup_with_facebook">用Facebook注册</string>
     <string name="enter_weight">输入重量</string>
-    <string name="enter_height">输入高度（cm）</string>
+    <string name="enter_height">输入高度（m）</string>
     <string name="enter_age">输入年龄</string>
     <string name="create_account_done">创建帐号</string>
     <string name="female">女</string>
@@ -18,7 +18,7 @@
     <string name="unleash_the_bull">释放公牛</string>
     <string name="title_activity_choose_gym">Map</string>
     <string name="Maps_Api_key">AIzaSyCHupRCeL9UuYCWMSp3CS6FrJIW3lf3gJU</string>
-    <string name="title_activity_homepage_navigation">Bull\'s Gym</string>
+    <string name="title_activity_homepage_navigation">BULL\'S GYM</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_title">Android Studio</string>

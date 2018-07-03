@@ -48,8 +48,8 @@ public class HomeFragment extends Fragment {
 
 
         workoutsList.add(new Workouts(1,"Meals Plan",R.drawable.mealsplan));
-        workoutsList.add(new Workouts(2,"Calories Calculator",R.drawable.caloriescalculator));
-        workoutsList.add(new Workouts(3,"BMI Calculator",R.drawable.bmicalculator));
+        workoutsList.add(new Workouts(2,"Calories Calculator",R.drawable.calories));
+        workoutsList.add(new Workouts(3,"BMI Calculator",R.drawable.bmi));
 
         adapter= new WorkoutsAdapter(getContext(),workoutsList);
         recyclerView.setAdapter(adapter);
