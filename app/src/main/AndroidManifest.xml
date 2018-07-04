@@ -101,7 +101,8 @@
             android:name=".MealsPlan"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme2" />
-        <activity android:name=".CaloriesCalculator"></activity>
+        <activity android:name=".CaloriesCalculator" />
+        <activity android:name=".BMICalculator"></activity>
     </application>
 
 </manifest>

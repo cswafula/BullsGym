@@ -9,7 +9,7 @@
     <string name="continue_butoon">Continuar</string>
     <string name="or">Or</string>
     <string name="signup_with_facebook">SignUp with Facebook</string>
-    <string name="enter_weight">Peso</string>
+    <string name="enter_weight">Peso(kg)</string>
     <string name="enter_height">Altura (m)</string>
     <string name="enter_age">Ingresa la edad</string>
     <string name="create_account_done">Crear una cuenta</string>

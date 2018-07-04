@@ -31,8 +31,7 @@ public class AddWorkout extends AppCompatActivity {
         MaterialSpinner spinner= findViewById(R.id.spinner);
         MaterialSpinner spinner2= findViewById(R.id.spinner2);
 
-        spinner.setItems("Chest workout","Legs workout","Arms workout","Mixed workout","Shoulders",
-                "Abs and Back","Triceps and Biceps");
+        spinner.setItems("Chest Muscle","Legs Muscle","Arms Muscle","Abs");
         spinner.setOnItemSelectedListener(new MaterialSpinner.OnItemSelectedListener() {
             @Override
             public void onItemSelected(MaterialSpinner view, int position, long id, Object item) {

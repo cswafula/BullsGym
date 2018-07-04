@@ -7,6 +7,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -39,6 +40,8 @@ public class HomepageNavigation extends AppCompatActivity
 
     public TextView RecordWorkout,nav_email,nav_bmi,nav_gym;
     String Email,Password,Gender,Weight,BMI,GymName,Latitude,Longitude,ImageURL;
+
+    boolean doubleBackToExitPressedOnce = false;
 
     @SuppressLint("SetTextI18n")
     @Override
@@ -122,9 +125,22 @@ public class HomepageNavigation extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
-        } else {
+        } else if (doubleBackToExitPressedOnce) {
             super.onBackPressed();
+            return;
         }
+
+        this.doubleBackToExitPressedOnce = true;
+        Toast.makeText(this, "click back again to exit", Toast.LENGTH_SHORT).show();
+
+        new Handler().postDelayed(new Runnable() {
+
+            @Override
+            public void run() {
+                doubleBackToExitPressedOnce=false;
+            }
+        }, 2000);
+
     }
 
     @Override
@@ -242,4 +258,5 @@ public class HomepageNavigation extends AppCompatActivity
         android.support.v7.app.AlertDialog alertDialog= builder.create();
         alertDialog.show();
     }
+
 }

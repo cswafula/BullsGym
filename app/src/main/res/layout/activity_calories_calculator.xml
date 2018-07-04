@@ -83,7 +83,7 @@
                 android:layout_marginTop="8dp"
                 android:fontFamily="@font/nunito_extralight"
                 android:hint="@string/enter_height"
-                android:inputType="number"
+                android:inputType="numberDecimal"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/CaloriesWeight"
@@ -91,7 +91,7 @@
                 app:met_errorColor="@android:color/holo_red_light"
                 app:met_floatingLabel="highlight"
                 app:met_iconLeft="@drawable/ic_weight"
-                app:met_maxCharacters="2"
+                app:met_maxCharacters="3"
                 app:met_primaryColor="@color/green" />
 
             <com.jaredrummler.materialspinner.MaterialSpinner

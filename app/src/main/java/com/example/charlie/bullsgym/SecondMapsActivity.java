@@ -1,6 +1,7 @@
 package com.example.charlie.bullsgym;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -11,8 +12,20 @@ import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.volley.AuthFailureError;
+import com.android.volley.DefaultRetryPolicy;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -26,6 +39,9 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import io.paperdb.Paper;
 
 public class SecondMapsActivity extends FragmentActivity implements OnMapReadyCallback {
@@ -34,6 +50,21 @@ public class SecondMapsActivity extends FragmentActivity implements OnMapReadyCa
     private static final float DEFAULT_ZOOM = 10f;
     private static final int REQUEST_LOCATION_PERMISSION=200;
     private FusedLocationProviderClient mFusedLocationProviderClient;
+
+    View mView;
+    Button Finish;
+    ProgressBar mProgressBar;
+
+    public static final String REGISTER_URL="https://bulls-gym-api.herokuapp.com/api/Register";
+    public static final String KEY_EMAIL="Email";
+    public static final String KEY_PASS="Password";
+    public static final String KEY_GENDER="Gender";
+    public static final String KEY_WEIGHT="Weight";
+    public static final String KEY_BMI="BMI";
+    public static final String KEY_GYMNAME="GymName";
+    public static final String KEY_LATITUDE="Latitude";
+    public static final String KEY_LONGITUDE="Longitude";
+    public static final String KEY_IMAGEURL="ImageURL";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -92,35 +123,46 @@ public class SecondMapsActivity extends FragmentActivity implements OnMapReadyCa
                 .setIcon(BitmapDescriptorFactory.fromResource(R.drawable.bull_icon));
 
         mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
+            @SuppressLint("SetTextI18n")
             @Override
             public boolean onMarkerClick(Marker marker) {
-                final AlertDialog.Builder builder= new AlertDialog.Builder(SecondMapsActivity.this);
-                final String name=marker.getTitle().toString();
+                final String name= marker.getTitle();
                 String position=marker.getPosition().toString();
                 final float lat= (float) marker.getPosition().latitude;
                 final float lng= (float) marker.getPosition().longitude;
-                builder.setMessage("Are you sure you want: "+ name+" position(Lat/Lng): "+ lat+","+lng);
-                builder.setCancelable(true);
-                builder.setNegativeButton("No, Cancel!", new DialogInterface.OnClickListener() {
+                String latitude=String.valueOf(lat);
+                String longitude=String.valueOf(lng);
+
+                //popup dialog
+                final AlertDialog.Builder builder= new AlertDialog.Builder(SecondMapsActivity.this);
+                mView = getLayoutInflater().inflate(R.layout.maps_dialog,null);
+                builder.setView(mView);
+                TextView GymName,GymLat,GymLng;
+                GymName=mView.findViewById(R.id.GymName);
+                GymLat=mView.findViewById(R.id.GymLatitude);
+                GymLng=mView.findViewById(R.id.GymLongitude);
+                Finish=mView.findViewById(R.id.Create_account_Gym);
+                mProgressBar=mView.findViewById(R.id.Maps_Progress);
+
+                GymName.setText(name);
+                GymLat.setText("Gym Latitude: "+latitude);
+                GymLng.setText("Gym Longitude: "+longitude);
+                Paper.book().write("SelectedGym",name);
+                Paper.book().write("Latitude",latitude);
+                Paper.book().write("Longitude",longitude);
+
+                Finish.setOnClickListener(new View.OnClickListener() {
                     @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        dialog.cancel();
+                    public void onClick(View v) {
+                        Finish.setVisibility(View.GONE);
+                        mProgressBar.setVisibility(View.VISIBLE);
+                        RegisterUser();
                     }
                 });
-                builder.setPositiveButton("Yes, Close!", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        startActivity(new Intent(SecondMapsActivity.this, Register2.class));
-                        String Latitude= String.valueOf(lat);
-                        String Longitude= String.valueOf(lng);
-                        Paper.book().write("SelectedGym",name);
-                        Paper.book().write("Latitude",Latitude);
-                        Paper.book().write("Longitude",Longitude);
-                        finish();
-                    }
-                });
-                AlertDialog alertDialog= builder.create();
+                AlertDialog alertDialog=builder.create();
                 alertDialog.show();
+
+
                 return false;
             }
         });
@@ -161,4 +203,73 @@ public class SecondMapsActivity extends FragmentActivity implements OnMapReadyCa
         }catch(SecurityException e){
         }
     }
+
+    private void RegisterUser() {
+        final String email,password,gender,weight,height,bmi,gymname,latitude,longitude,ImageURL;
+        email= Paper.book().read("Email").toString();
+        password=Paper.book().read("Password").toString();
+        gender=Paper.book().read("UserGender");
+        height=Paper.book().read("UserHeight");
+        weight=Paper.book().read("UserWeight");
+        int wei=Integer.valueOf(weight);
+        int hei=Integer.valueOf(height);
+        float bmi1=wei/hei;
+        bmi=String.valueOf(bmi1);
+        gymname=Paper.book().read("SelectedGym").toString();
+        latitude=Paper.book().read("Latitude").toString();
+        longitude=Paper.book().read("Longitude").toString();
+        ImageURL="test";
+        StringRequest stringRequest=new StringRequest(Request.Method.POST, REGISTER_URL,
+
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        Toast.makeText(getApplicationContext(), "Registration Successful", Toast.LENGTH_LONG).show();
+                        String login="Yes";
+                        Paper.book().write("UserEmail",email);
+                        Paper.book().write("UserPassword",password);
+                        Paper.book().write("UserGender",gender);
+                        Paper.book().write("UserWeight",weight);
+                        Paper.book().write("UserBMI",bmi);
+                        Paper.book().write("UserGymName",gymname);
+                        Paper.book().write("UserLatitude",latitude);
+                        Paper.book().write("Userlongitude",longitude);
+                        Paper.book().write("UserImageUrl",ImageURL);
+                        mProgressBar.setVisibility(View.GONE);
+                        finish();
+                        startActivity(new Intent(SecondMapsActivity.this, HomepageNavigation.class));
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Finish.setVisibility(View.VISIBLE);
+                        mProgressBar.setVisibility(View.GONE);
+                        Toast.makeText(getApplicationContext(),error.toString(),Toast.LENGTH_LONG).show();
+                    }
+                }){
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String,String> params=new HashMap<>();
+                params.put(KEY_EMAIL,email);
+                params.put(KEY_PASS,password);
+                params.put(KEY_GENDER,gender);
+                params.put(KEY_WEIGHT,weight);
+                params.put(KEY_BMI,bmi);
+                params.put(KEY_GYMNAME,gymname);
+                params.put(KEY_LATITUDE,latitude);
+                params.put(KEY_LONGITUDE,longitude);
+                params.put(KEY_IMAGEURL,ImageURL);
+                return params;
+            }
+        };
+
+        stringRequest.setRetryPolicy(new DefaultRetryPolicy(
+                5000,
+                DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
+                DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
+        RequestQueue requestQueue= Volley.newRequestQueue(this);
+        requestQueue.add(stringRequest);
+    }
+
 }

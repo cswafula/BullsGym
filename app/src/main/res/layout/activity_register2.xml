@@ -18,41 +18,13 @@
         android:textSize="30sp"
         app:fontFamily="@font/nunito_extralight"
         android:gravity="center_horizontal"/>
-        <RadioGroup
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:id="@+id/Radio">
 
-            <ImageView
-                android:layout_width="43dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
-                android:layout_height="50dp"
-                android:src="@drawable/gender" />
-
-            <RadioButton
-                android:id="@+id/Female"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/female"
-                app:fontFamily="@font/nunito_extralight"
-                android:textStyle="bold"
-                android:textColor="@color/green"
-                android:textSize="25sp"
-                />
-            <RadioButton
-                android:id="@+id/Male"
-                app:fontFamily="@font/nunito_extralight"
-                android:text="@string/male"
-                android:textColor="@color/green"
-                android:textSize="25sp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20sp"
-                android:layout_marginStart="20sp"
-                android:textStyle="bold"/>
-        </RadioGroup>
+    <com.jaredrummler.materialspinner.MaterialSpinner
+        android:id="@+id/RegisterSpinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"/>
 
     <com.rengwuxian.materialedittext.MaterialEditText
         android:id="@+id/RegisterWeight"
@@ -62,7 +34,7 @@
         android:hint="@string/enter_weight"
         app:met_errorColor="@android:color/holo_red_light"
         app:met_baseColor="@android:color/white"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:layout_marginStart="15dp"
         android:layout_marginEnd="15dp"
         app:met_primaryColor="@color/green"
@@ -119,22 +91,22 @@
         android:textSize="20sp"
         android:textAllCaps="false" />
 
-    <Button
-        android:id="@+id/CreateAccount"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:background="@color/green"
-        android:gravity="center"
-        android:layout_marginRight="10dp"
-        android:layout_marginLeft="10dp"
-        android:textColor="@android:color/black"
-        android:padding="10dp"
-        android:text="@string/create_account_done"
-        app:fontFamily="@font/nunito_extralight"
-        android:textStyle="bold"
-        android:textSize="20sp"
-        android:textAllCaps="false" />
+    <!--<Button-->
+        <!--android:id="@+id/CreateAccount"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginTop="20dp"-->
+        <!--android:background="@color/green"-->
+        <!--android:gravity="center"-->
+        <!--android:layout_marginRight="10dp"-->
+        <!--android:layout_marginLeft="10dp"-->
+        <!--android:textColor="@android:color/black"-->
+        <!--android:padding="10dp"-->
+        <!--android:text="@string/create_account_done"-->
+        <!--app:fontFamily="@font/nunito_extralight"-->
+        <!--android:textStyle="bold"-->
+        <!--android:textSize="20sp"-->
+        <!--android:textAllCaps="false" />-->
 
     <ProgressBar
         android:layout_width="wrap_content"

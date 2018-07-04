@@ -46,7 +46,7 @@ public class WorkoutsAdapter extends RecyclerView.Adapter<WorkoutsAdapter.Workou
                 }else if(workouts.getWorkoutname()=="Calories Calculator"){
                     mCtx.startActivity(new Intent(mCtx,CaloriesCalculator.class));
                 }else if(workouts.getWorkoutname()=="BMI Calculator"){
-                    Toast.makeText(mCtx,"You Are a Guru",Toast.LENGTH_LONG).show();
+                    mCtx.startActivity(new Intent(mCtx,BMICalculator.class));
                 }
             }
         });

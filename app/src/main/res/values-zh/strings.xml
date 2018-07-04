@@ -9,7 +9,7 @@
     <string name="continue_butoon">继续</string>
     <string name="or">Or</string>
     <string name="signup_with_facebook">用Facebook注册</string>
-    <string name="enter_weight">输入重量</string>
+    <string name="enter_weight">输入重量(kg)</string>
     <string name="enter_height">输入高度（m）</string>
     <string name="enter_age">输入年龄</string>
     <string name="create_account_done">创建帐号</string>

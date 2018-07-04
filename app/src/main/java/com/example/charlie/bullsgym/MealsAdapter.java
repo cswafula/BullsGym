@@ -45,6 +45,7 @@ public class MealsAdapter extends RecyclerView.Adapter<MealsAdapter.MealsViewHol
             public void onClick(View v) {
                 AlertDialog.Builder builder= new AlertDialog.Builder(mCtx);
                 builder.setTitle(meals.getMealname());
+                builder.setIcon(mCtx.getResources().getDrawable(meals.getMealImage()));
                 builder.setMessage(meals.getDescription());
                 AlertDialog alertDialog= builder.create();
                 alertDialog.show();
