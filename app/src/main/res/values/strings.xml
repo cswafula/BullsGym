@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">BULL\'S GYM</string>
+    <string name="app_name">Bull\'s Gym</string>
     <string name="let_s_bull_this_up">Let\'s Bull This Up</string>
     <string name="enter_username">Enter Username</string>
     <string name="enter_email_address">Enter Email Address</string>
@@ -17,7 +17,7 @@
     <string name="unleash_the_bull">Unleash The Bull</string>
     <string name="title_activity_choose_gym">Map</string>
     <string name="Maps_Api_key">AIzaSyCHupRCeL9UuYCWMSp3CS6FrJIW3lf3gJU</string>
-    <string name="title_activity_homepage_navigation">BULL\'S GYM</string>
+    <string name="title_activity_homepage_navigation">Bull\'s Gym</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_title">Android Studio</string>
@@ -63,4 +63,8 @@
     <string name="utility">Utility</string>
     <string name="calculate">Calculate</string>
     <string name="add_workout_record">Add Workout Record</string>
+    <string name="workout_description">Workout Description</string>
+    <string name="help">Bulls Gym is an international gym application designed to help you workout wherever you go and still be in contact with the gyms. You will be required to select a current Gym on first Registration but can later change when viewing your profile. After a successful login, you will be assigned beginner basic workouts with instructions. In case you find difficulty in following them alone, detail of the instructors have been put on the side menu. Bulls Gym also provides you with a utility tab where you can get your meals plan and BMI calculator. You can also record your won past workouts in the workouts tab and view them in the logs tab. For more info kindly contact us through 0790450728</string>
+    <string name="getting_started">Getting Started</string>
+    <string name="title_activity_maps">Map</string>
 </resources>

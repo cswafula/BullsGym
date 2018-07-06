@@ -109,6 +109,7 @@ public class Register2 extends AppCompatActivity {
             Paper.book().write("UserWeight",Reg_Weight);
             Paper.book().write("UserHeight",Reg_Height);
             startActivity(new Intent(Register2.this,SecondMapsActivity.class));
+            finish();
         }
     }
 

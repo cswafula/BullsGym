@@ -18,7 +18,7 @@
     <application
         android:name=".MainApplication"
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/logo"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
@@ -101,8 +101,22 @@
             android:name=".MealsPlan"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme2" />
-        <activity android:name=".CaloriesCalculator" />
-        <activity android:name=".BMICalculator"></activity>
+        <activity
+            android:name=".CaloriesCalculator"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".BMICalculator"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Help"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Instructors"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme2" />
+        <activity
+            android:name=".MapsActivity"
+            android:label="@string/title_activity_maps"></activity>
     </application>
 
 </manifest>

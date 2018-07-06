@@ -8,86 +8,142 @@
     android:orientation="vertical"
     android:background="@color/black">
 
-    <TextView
-        android:layout_marginTop="10dp"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/add_workout_record"
-        android:textColor="@color/green"
-        android:textSize="20sp"
-        android:padding="10sp"
-        app:fontFamily="@font/nunito_extralight"/>
+        android:layout_height="match_parent">
 
-    <com.jaredrummler.materialspinner.MaterialSpinner
-        android:id="@+id/spinner"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"/>
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-    <TextView
-        android:layout_marginTop="10dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/reps_completed"
-        android:textColor="@color/green"
-        android:textSize="20sp"
-        android:padding="10sp"
-        app:fontFamily="@font/nunito_extralight"/>
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:padding="10sp"
+                android:text="@string/add_workout_record"
+                android:textColor="@color/green"
+                android:textSize="20sp"
+                app:fontFamily="@font/nunito_extralight"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-    <com.jaredrummler.materialspinner.MaterialSpinner
-        android:id="@+id/spinner2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"/>
+            <com.jaredrummler.materialspinner.MaterialSpinner
+                android:id="@+id/spinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView" />
 
-    <TextView
-        android:id="@+id/addWorkoutMonth"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:text="month"
-        android:visibility="gone"
-        android:textColor="@color/green"
-        android:textSize="20sp"
-        app:fontFamily="@font/nunito_extralight"/>
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:padding="10sp"
+                android:text="@string/reps_completed"
+                android:textColor="@color/green"
+                android:textSize="20sp"
+                app:fontFamily="@font/nunito_extralight"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/spinner" />
 
-    <com.github.sundeepk.compactcalendarview.CompactCalendarView
-        android:layout_marginTop="15dp"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/addWorkout_compactcalendar"
-        android:layout_width="fill_parent"
-        android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp"
-        android:paddingRight="10dp"
-        android:paddingLeft="10dp"
-        android:layout_height="250dp"
-        app:compactCalendarTargetHeight="250dp"
-        app:compactCalendarTextSize="15sp"
-        app:compactCalendarBackgroundColor="@android:color/white"
-        app:compactCalendarTextColor="@android:color/black"
-        app:compactCalendarCurrentSelectedDayBackgroundColor="@color/green"
-        app:compactCalendarCurrentDayBackgroundColor="#B71C1C"
-        app:compactCalendarMultiEventIndicatorColor="#fff"
-        />
-    <Button
-        android:layout_marginTop="10dp"
-        android:id="@+id/BtnCreateWorkout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/green"
-        android:gravity="center"
-        android:layout_marginRight="10dp"
-        android:layout_marginLeft="10dp"
-        android:textColor="@android:color/black"
-        android:padding="10dp"
-        android:text="@string/add_workout"
-        app:fontFamily="@font/nunito_extralight"
-        android:textStyle="bold"
-        android:textSize="20sp"
-        android:textAllCaps="false"
-        android:layout_marginBottom="20dp"/>
+            <com.jaredrummler.materialspinner.MaterialSpinner
+                android:id="@+id/spinner2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
+
+            <TextView
+                android:id="@+id/addDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:padding="10dp"
+                android:text="@string/workout_description"
+                android:textColor="@color/green"
+                android:textSize="20sp"
+                app:fontFamily="@font/nunito_extralight"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/spinner2" />
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/WorkoutDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+                android:layout_marginStart="8dp"
+                android:fontFamily="@font/nunito_extralight"
+                android:hint="@string/workout_description"
+                android:inputType="text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/addDescription"
+                app:met_baseColor="@android:color/white"
+                app:met_errorColor="@android:color/holo_red_light"
+                app:met_floatingLabel="highlight"
+                app:met_iconLeft="@drawable/ic_weight"
+                app:met_maxCharacters="50"
+                app:met_primaryColor="@color/green"
+                android:textSize="18sp"/>
+
+            <Button
+                android:id="@+id/BtnCreateWorkout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:background="@color/green"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="@string/add_workout"
+                android:textAllCaps="false"
+                android:textColor="@android:color/black"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:fontFamily="@font/nunito_extralight"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/WorkoutDescription" />
+
+            <ProgressBar
+                android:id="@+id/WorkoutProgress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/BtnCreateWorkout"
+                android:visibility="gone"/>
+
+
+
+        </android.support.constraint.ConstraintLayout>
+
+    </ScrollView>
 
 </LinearLayout>

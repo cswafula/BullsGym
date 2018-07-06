@@ -17,6 +17,20 @@
             android:icon="@drawable/ic_menu_manage"
             android:title="@string/change_language" />
         <item
+            android:id="@+id/nav_camera"
+            android:title="Take Progress Photo"
+            android:icon="@drawable/ic_camera"/>
+
+        <item
+            android:id="@+id/nav_instrustors"
+            android:title="Gym Instructors"
+            android:icon="@drawable/ic_instructor"/>
+
+        <item
+            android:id="@+id/nav_help"
+            android:title="Help"
+            android:icon="@drawable/ic_help"/>
+        <item
             android:id="@+id/nav_logout"
             android:icon="@drawable/ic_logout"
             android:title="@string/logout" />

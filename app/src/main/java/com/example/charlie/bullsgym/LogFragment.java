@@ -1,6 +1,8 @@
 package com.example.charlie.bullsgym;
 
 import android.app.AlertDialog;
+import android.app.LauncherActivity;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
@@ -16,7 +18,17 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 import com.github.sundeepk.compactcalendarview.CompactCalendarView;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -32,24 +44,65 @@ public class LogFragment extends Fragment {
     LogsDataAdapter adapter;
     List<LogsData> logsDataList;
 
+    private static String FETCH_URL;
+
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         final View view= inflater.inflate(R.layout.fragment_log,null);
 
+        Paper.init(view.getContext());
+        String Email=Paper.book().read("UserEmail").toString();
+        FETCH_URL="https://bulls-gym-api.herokuapp.com/api/UserWorkouts/"+Email;
+
+
+
         logsDataList= new ArrayList<>();
         recyclerView= view.findViewById(R.id.LogsrecyclerView);
         recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        recyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));
 
-        logsDataList.add(new LogsData("Chest Workout","12 by 4 Reps (15 mins)","Thur Jul 11"));
-        logsDataList.add(new LogsData("Legs Workout","24 by 8 Reps (30 mins)","Thur Jul 05"));
-        logsDataList.add(new LogsData("Mixed Workout","12 by 4 Reps (15 mins)","Thur Jul 27"));
-        logsDataList.add(new LogsData("Triceps and Biceps","8 by 16 Reps (20 mins)","Thur Jul 31"));
+        final ProgressDialog progressDialog=new ProgressDialog(view.getContext());
+        progressDialog.setMessage("Loading Workout History....");
+        progressDialog.show();
 
-        adapter=new LogsDataAdapter(getContext(),logsDataList);
-        recyclerView.setAdapter(adapter);
+
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, FETCH_URL,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        progressDialog.dismiss();
+                        try {
+                            JSONObject jsonObject=new JSONObject(response);
+                            JSONArray jsonArray=jsonObject.getJSONArray("Workouts");
+
+                            for(int i=0 ; i<jsonArray.length();i++){
+                                JSONObject object=jsonArray.getJSONObject(i);
+                                logsDataList.add(new LogsData(object.getString("WorkoutName"),object.getString("Reps")
+                                        ,object.getString("Date"),object.getString("Description")));
+                            }
+
+                            adapter= new LogsDataAdapter(view.getContext(),logsDataList);
+                            recyclerView.setAdapter(adapter);
+
+                        } catch (JSONException e) {
+                            Toast.makeText(view.getContext(), e.getMessage(),Toast.LENGTH_LONG).show();
+                            e.printStackTrace();
+                        }
+
+
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                progressDialog.dismiss();
+                Toast.makeText(view.getContext(),error.toString(),Toast.LENGTH_LONG).show();
+            }
+        });
+
+        RequestQueue requestQueue= Volley.newRequestQueue(view.getContext());
+        requestQueue.add(stringRequest);
 
         return view;
     }

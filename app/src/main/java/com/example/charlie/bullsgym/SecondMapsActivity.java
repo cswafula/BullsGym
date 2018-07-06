@@ -272,4 +272,37 @@ public class SecondMapsActivity extends FragmentActivity implements OnMapReadyCa
         requestQueue.add(stringRequest);
     }
 
+    @Override
+    public void onBackPressed(){
+        final AlertDialog.Builder builder= new AlertDialog.Builder(SecondMapsActivity.this);
+        builder.setMessage("Are you sure you want to go back, you're almost done");
+        builder.setCancelable(true);
+        builder.setNegativeButton("No, Stay!", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.cancel();
+            }
+        });
+        builder.setPositiveButton("Yes, Close!", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                String empty="";
+                Paper.book().write("UserEmail",empty);
+                Paper.book().write("UserPassword",empty);
+                Paper.book().write("UserGender",empty);
+                Paper.book().write("UserWeight",empty);
+                Paper.book().write("UserBMI",empty);
+                Paper.book().write("UserGymName",empty);
+                Paper.book().write("UserLatitude",empty);
+                Paper.book().write("Userlongitude",empty);
+                Paper.book().write("UserImageUrl",empty);
+                startActivity(new Intent(SecondMapsActivity.this, Loginpage.class));
+                finish();
+
+            }
+        });
+        AlertDialog alertDialog= builder.create();
+        alertDialog.show();
+    }
+
 }

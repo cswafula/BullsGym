@@ -146,7 +146,7 @@ public class HomepageNavigation extends AppCompatActivity
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.homepage_navigation, menu);
+//        getMenuInflater().inflate(R.menu.homepage_navigation, menu);
         return true;
     }
 
@@ -222,6 +222,15 @@ public class HomepageNavigation extends AppCompatActivity
                 break;
             case R.id.nav_Music:
                 startActivity(new Intent(HomepageNavigation.this, Music.class));
+                break;
+            case R.id.nav_camera:
+                startActivity(new Intent(HomepageNavigation.this,Camera.class));
+                break;
+            case R.id.nav_help:
+                startActivity(new Intent(HomepageNavigation.this,Help.class));
+                break;
+            case R.id.nav_instrustors:
+                startActivity(new Intent(HomepageNavigation.this,Instructors.class));
                 break;
         }
         return loadFragment(fragment);

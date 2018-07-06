@@ -189,6 +189,7 @@ public class Loginpage extends AppCompatActivity {
                     String Latitude=jsonArray.get(6).toString();
                     String Longitude=jsonArray.get(7).toString();
                     String ImageURL=jsonArray.get(8).toString();
+                    String UserID=jsonArray.get(9).toString();
                     Paper.book().write("UserEmail",Email);
                     Paper.book().write("UserPassword",Password);
                     Paper.book().write("UserGender",Gender);

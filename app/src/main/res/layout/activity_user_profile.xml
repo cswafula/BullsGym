@@ -7,129 +7,188 @@
     tools:context=".UserProfile"
     android:background="@color/black">
 
-    <ImageView
-        android:id="@+id/imageView2"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:src="@drawable/bullbeast"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_height="match_parent">
 
-    <ImageView
-        android:id="@+id/profile_Image"
-        android:layout_width="87dp"
-        android:layout_height="99dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="8dp"
-        android:src="@drawable/user_icon"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView2"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
-    <TextView
-        android:id="@+id/Profile_currentBMI"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:padding="10sp"
-        android:text="Current BMI"
-        android:textColor="@color/green"
-        android:textSize="20sp"
-        app:fontFamily="@font/nunito_extralight"
-        app:layout_constraintStart_toEndOf="@+id/profile_Image"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-    <com.rengwuxian.materialedittext.MaterialEditText
-        android:id="@+id/ProfileEmail"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="20dp"
-        android:textSize="18sp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="10dp"
-        android:fontFamily="@font/nunito_extralight"
-        android:hint="@string/enter_email_address"
-        android:inputType="textEmailAddress"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/profile_Image"
-        app:met_baseColor="@android:color/white"
-        app:met_errorColor="@android:color/holo_red_light"
-        app:met_floatingLabel="highlight"
-        app:met_iconLeft="@drawable/ic_email"
-        app:met_maxCharacters="35"
-        app:met_primaryColor="@color/green" />
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="match_parent"
+                android:layout_height="170dp"
+                android:src="@drawable/planspic"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-    <com.rengwuxian.materialedittext.MaterialEditText
-        android:id="@+id/ProfilePassword"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="20dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="10dp"
-        android:fontFamily="@font/nunito_extralight"
-        android:hint="@string/enter_password"
-        android:inputType="text"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ProfileEmail"
-        app:met_baseColor="@android:color/white"
-        app:met_errorColor="@android:color/holo_red_light"
-        app:met_floatingLabel="highlight"
-        app:met_iconLeft="@drawable/ic_password"
-        app:met_maxCharacters="35"
-        app:met_primaryColor="@color/green"
-        android:textSize="18sp"/>
+            <ImageView
+                android:id="@+id/profile_Image"
+                android:layout_width="87dp"
+                android:layout_height="99dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="8dp"
+                android:src="@drawable/user_icon"
+                app:layout_constraintBottom_toBottomOf="@+id/imageView2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
-    <Button
-        android:id="@+id/Change_Gym_button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="20dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="8dp"
-        android:background="@color/green"
-        android:gravity="center"
-        android:padding="10dp"
-        android:text="@string/change_gym_location"
-        android:textAllCaps="false"
-        android:textColor="@android:color/black"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:fontFamily="@font/nunito_extralight"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ProfilePassword" />
+            <TextView
+                android:id="@+id/ProfileGymLocation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:fontFamily="@font/nunito_extralight"
+                android:padding="8dp"
+                android:text="GymLocation"
+                android:textColor="@color/green"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="@+id/imageView2"
+                app:layout_constraintStart_toEndOf="@+id/profile_Image" />
 
-    <Button
-        android:id="@+id/Save_profile_button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="20dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="10dp"
-        android:background="@color/green"
-        android:gravity="center"
-        android:padding="10dp"
-        android:text="@string/save_profile"
-        android:textAllCaps="false"
-        android:textColor="@android:color/black"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:fontFamily="@font/nunito_extralight"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Change_Gym_button" />
+            <TextView
+                android:id="@+id/ProfileGender"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:fontFamily="@font/nunito_extralight"
+                android:text="Gender"
+                android:textColor="@color/green"
+                android:textSize="20sp"
+                app:layout_constraintStart_toEndOf="@id/profile_Image"
+                app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
-    <ProgressBar
-        android:id="@+id/Profile_progressBar"
-        android:visibility="gone"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/ProfileEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+                android:textSize="18sp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/nunito_extralight"
+                android:hint="@string/enter_email_address"
+                android:inputType="textEmailAddress"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/profile_Image"
+                app:met_baseColor="@android:color/white"
+                app:met_errorColor="@android:color/holo_red_light"
+                app:met_floatingLabel="highlight"
+                app:met_iconLeft="@drawable/ic_email"
+                app:met_maxCharacters="35"
+                app:met_primaryColor="@color/green" />
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/ProfilePassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/nunito_extralight"
+                android:hint="@string/enter_password"
+                android:inputType="text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ProfileEmail"
+                app:met_baseColor="@android:color/white"
+                app:met_errorColor="@android:color/holo_red_light"
+                app:met_floatingLabel="highlight"
+                app:met_iconLeft="@drawable/ic_password"
+                app:met_maxCharacters="35"
+                app:met_primaryColor="@color/green"
+                android:textSize="18sp"/>
+
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/ProfileWeight"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/nunito_extralight"
+                android:hint="@string/enter_weight"
+                android:inputType="text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ProfilePassword"
+                app:met_baseColor="@android:color/white"
+                app:met_errorColor="@android:color/holo_red_light"
+                app:met_floatingLabel="highlight"
+                app:met_iconLeft="@drawable/ic_weight"
+                app:met_maxCharacters="3"
+                app:met_primaryColor="@color/green"
+                android:textSize="18sp"/>
+
+            <com.jaredrummler.materialspinner.MaterialSpinner
+                android:id="@+id/ProfileGenderSpinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginStart="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ProfileWeight" />
+
+            <Button
+                android:id="@+id/Change_Gym_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="15dp"
+                android:background="@color/green"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="@string/change_gym_location"
+                android:textAllCaps="false"
+                android:textColor="@android:color/black"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:fontFamily="@font/nunito_extralight"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ProfileGenderSpinner" />
+
+            <Button
+                android:id="@+id/Save_profile_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="15dp"
+                android:background="@color/green"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="@string/save_profile"
+                android:textAllCaps="false"
+                android:textColor="@android:color/black"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:fontFamily="@font/nunito_extralight"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/Change_Gym_button"
+                app:layout_constraintTop_toBottomOf="@+id/ProfileGenderSpinner" />
+
+            <ProgressBar
+                android:id="@+id/Profile_progressBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginStart="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/Change_Gym_button"
+                android:visibility="gone"/>
+
+        </android.support.constraint.ConstraintLayout>
+
+    </ScrollView>
+
 </android.support.constraint.ConstraintLayout>

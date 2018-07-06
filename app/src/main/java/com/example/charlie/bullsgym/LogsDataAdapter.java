@@ -34,6 +34,7 @@ public class LogsDataAdapter extends RecyclerView.Adapter<LogsDataAdapter.LogsDa
         holder.textViewWorkout.setText(logsData.getWorkoutname());
         holder.textViewReps.setText(logsData.getReps());
         holder.textViewDate.setText(logsData.getDate());
+        holder.textViewDesc.setText(logsData.getDescription());
     }
 
     @Override
@@ -43,7 +44,7 @@ public class LogsDataAdapter extends RecyclerView.Adapter<LogsDataAdapter.LogsDa
 
     class LogsDataViewHolder extends RecyclerView.ViewHolder{
 
-        TextView textViewWorkout,textViewReps,textViewDate;
+        TextView textViewWorkout,textViewReps,textViewDate,textViewDesc;
 
         public LogsDataViewHolder(View itemView) {
             super(itemView);
@@ -51,6 +52,7 @@ public class LogsDataAdapter extends RecyclerView.Adapter<LogsDataAdapter.LogsDa
             textViewWorkout=itemView.findViewById(R.id.textViewWorkoutDone);
             textViewReps=itemView.findViewById(R.id.textViewShortDesc);
             textViewDate=itemView.findViewById(R.id.textViewDate);
+            textViewDesc=itemView.findViewById(R.id.textViewDescription);
 
         }
     }

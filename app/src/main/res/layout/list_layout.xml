@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical">
 
     <android.support.v7.widget.CardView
+        android:background="@android:color/white"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="2dp"
@@ -21,48 +24,67 @@
                 android:id="@+id/imageView"
                 android:layout_width="60dp"
                 android:layout_height="59dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
                 android:padding="4dp"
-                android:src="@drawable/logo" />
+                android:src="@drawable/logo"
+                />
 
             <TextView
                 android:id="@+id/textViewWorkoutDone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="8dp"
                 android:layout_toEndOf="@id/imageView"
-                android:text="Workout done"
                 android:fontFamily="@font/nunito_extralight"
+                android:text="Workout done"
+                android:textColor="@color/black"
                 android:textSize="18sp"
-                android:textStyle="bold"
-                android:textColor="@color/black" />
+                android:textStyle="bold"/>
 
             <TextView
                 android:id="@+id/textViewShortDesc"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/textViewWorkoutDone"
-                android:layout_marginStart="5dp"
-                android:layout_marginTop="5dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="8dp"
                 android:layout_toEndOf="@id/imageView"
-                android:text="Reps Completed"
                 android:fontFamily="@font/nunito_extralight"
+                android:text="Reps Completed"
+                android:textColor="@color/black"
                 android:textSize="14sp"
-                android:textStyle="bold"
-                android:textColor="@color/black" />
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/textViewDate"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/textViewShortDesc"
-                android:layout_marginStart="5dp"
-                android:layout_marginTop="5dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="8dp"
                 android:layout_toEndOf="@id/imageView"
-                android:text="Date"
                 android:fontFamily="@font/nunito_extralight"
+                android:text="Date"
+                android:textColor="@color/black"
                 android:textSize="14sp"
-                android:textStyle="bold"
-                android:textColor="@color/black" />
+                android:textStyle="bold"/>
+
+
+            <TextView
+                android:id="@+id/textViewDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/textViewWorkoutDone"
+                android:layout_below="@+id/textViewDate"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/nunito_extralight"
+                android:text="Description"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:textStyle="bold" />
 
 
         </RelativeLayout>
